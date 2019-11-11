@@ -51,8 +51,8 @@ public class TradePage {
     public MobileElement securityPortfolio;
     @AndroidFindBy(id = "com.ideomobile.discount:id/securityPortfolioItemCloseButton")  //x לסגירת החלון
     public MobileElement securityPortfolioItemCloseButton;
-
-
+    @AndroidFindBy(id = "com.ideomobile.discount:id/SecuritiesTradeDetailTitle")  //
+    public MobileElement SecuritiesTradeDetailTitle;
 
     @Step("לחיצה על קנייה ")
     public  TradePage click_buy_button(){

@@ -13,7 +13,7 @@
     <!--        </classes>-->
     <!--    </test>-->
     <test name="samsung Test">
-        <parameter name="device" value="192.168.0.102:5555"></parameter>
+        <parameter name="device" value="192.168.1.152:5555"></parameter>
 
         <parameter name="platformVersion" value="9"></parameter>
         <parameter name="appiumServer" value="http://127.0.0.1:4729/wd/hub"></parameter>
@@ -21,10 +21,10 @@
 <!--192.168.1.152:5555-->
 <!--        192.168.0.102:5555-->
         <classes>
-            <class name="MeetBankerPageTest">
-<!--                <methods>-->
-<!--                    <include name="CreditCard_Dashbord" />-->
-<!--                </methods>-->
+            <class name="TradePageTest">
+                <methods>
+                    <include name="Trade_Buy_Stok" />
+                </methods>
             </class>
         </classes>
     </test>

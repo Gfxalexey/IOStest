@@ -21,20 +21,6 @@ import Utils.PropertyManager;
 @Listeners({TestAllureListener.class})
 public class WithdrawalOfDepositTest extends BasePage{
 
-//
-//    AppiumDriver<MobileElement> driver;
-//    public Properties prop;
-//    public BasePage basePage;
-//
-//
-//    @BeforeMethod
-//    public void setup() throws MalformedURLException {
-//        BasePage basePage = new BasePage();
-////        driver = basePage.initialize_driver();
-//        prop = basePage.initialize_Properties();
-//
-//    }
-
     @Test(priority = 1,description = "משיכה_מפקדון")
     public void WithdrawalOfDeposit () throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);
@@ -64,11 +50,6 @@ public class WithdrawalOfDepositTest extends BasePage{
         dep.clickScreenCaptureButton();
 
     }
-
-//    @AfterMethod
-//    public void teardown() {
-//        driver.closeApp();
-//    }
 
 
    }

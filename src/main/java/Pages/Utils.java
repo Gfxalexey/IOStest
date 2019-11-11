@@ -17,6 +17,7 @@ public class Utils {
     AppiumDriver<MobileElement> driver;
 
 
+
     public static void scrollToText(String text, AppiumDriver<MobileElement> driver) throws InterruptedException {
         List<MobileElement> elements = driver.findElements(MobileBy
                 .AndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView("
@@ -192,14 +193,15 @@ public class Utils {
                 System.out.println(e.getMessage());
             }
     }
-//
+    public static String  Replace(String element){
+        String str = element ;
+        str = str.replaceAll(",", "");
+        System.out.println(str);
+        return  str;
+    }
 
-//    public static MobileElement FindElement(AppiumDriver<MobileElement> driver, By by, int timeoutInSeconds)
-//    {
-//        WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
-//        wait.until( ExpectedConditions.presenceOfElementLocated(by) ); //throws a timeout exception if element not present after waiting <timeoutInSeconds> seconds
-//        return driver.findElement(by);
-//    }
+
+
 }
 
 

@@ -46,6 +46,24 @@ public class StockPage {
     public MobileElement TradeStage;
     @AndroidFindBy(id = "com.ideomobile.discount:id/WizardScreenCaptureButton")
     public MobileElement screenCaptureButton;
+    @AndroidFindBy(className = "android.widget.EditText")  //
+    public MobileElement www;
+    @AndroidFindBy(id = "com.ideomobile.discount:id/error_positive_button")  //
+    public MobileElement positive_button;
+    @AndroidFindBy(id = "com.ideomobile.discount:id/WizardScreenCaptureButton")  //
+    public MobileElement ScreenCaptureButton;
+
+
+    @Step("לחיצה על אישור שמירת מסך ")
+    public  StockPage click_WizardScreenCaptureButton(){
+        ScreenCaptureButton.click();
+        return this;
+    }
+    @Step("לחיצה על אישור של תנודת 10 אחוז ")
+    public  StockPage click_positive_button(){
+        this.positive_button.click();
+        return this;
+    }
 
     @Step("הזנה של הגבלת שער")
     public  StockPage type_units(String unit){
