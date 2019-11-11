@@ -6,19 +6,6 @@ import Utils.PropertyManager;
 
 @Listeners({TestAllureListener.class})
 public class CashWithdrawalPageTest extends BasePage {
-//
-//       AppiumDriver<MobileElement> driver;
-//        public Properties prop;
-//        public BasePage basePage;
-//
-//        @BeforeMethod
-//        public void setup() throws MalformedURLException {
-//            BasePage basePage = new BasePage();
-//            driver=basePage.initialize_driver();
-//            prop = basePage.initialize_Properties();
-//
-//
-//        }
 
     @Test(priority = 0, description = "משיכת מזומן ללא כרטיס")
     public void CashWithdrawal() throws InterruptedException {

@@ -39,6 +39,14 @@ public class MeetBankerPage {
     public MobileElement phone_titel;
     @AndroidFindBy(id = "com.ideomobile.discount:id/appointmentConfirmationCard") //
     public MobileElement appointmentConfirmationCard;
+    @AndroidFindBy(id = "com.ideomobile.discount:id/bankerMeeting_appDetailsItem_cancelButton") //ביטול פגישה עם בנקאי
+    public MobileElement cancel_meet_banker_Button;
+    @AndroidFindBy(id = "com.ideomobile.discount:id/WhiteButtonsPopupPositiveButton") // (חלון קופץ) אישור ביטול
+    public MobileElement PopupPositiveButton;
+    @AndroidFindBy(id = "com.ideomobile.discount:id/WhiteButtonsPopupNegativeButton") //ביטול של הביטול (חלון קופץ)
+    public MobileElement PopupNegativeButton;
+    @AndroidFindBy(id = "com.android.packageinstaller:id/permission_allow_button") //ביטול של הביטול (חלון קופץ)
+    public MobileElement permission_allow_button2;
 
 
 
@@ -51,11 +59,24 @@ public class MeetBankerPage {
     @AndroidFindBy(uiAutomator = "new UiSelector().text(\"פגישת ייעוץ השקעות\")")
     public MobileElement Meet_with_Investment;
 
+    @Step("לחיצה על אישור בחלון קופץ")
+    public MeetBankerPage click_PopupPositiveButton() {
+        PopupPositiveButton.click();
+        return this;
+    }
+
+    @Step("לחיצה על ביטול פגישה")
+    public MeetBankerPage click_cancel_meet_banker_Button() {
+        cancel_meet_banker_Button.click();
+        return this;
+    }
+
     @Step("לחיצה על פגישת ייעוץ השקעות")
     public MeetBankerPage click_Meet_with_Investment() {
         Meet_with_Investment.click();
         return this;
     }
+
     @Step("לחיצה על המשך")
     public MeetBankerPage click_continueButton() {
         continueButton.click();

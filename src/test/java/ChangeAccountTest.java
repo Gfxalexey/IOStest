@@ -20,23 +20,12 @@ import Listeners.TestAllureListener;
 import java.net.MalformedURLException;
 import java.util.List;
 import java.util.Properties;
+import Utils.PropertyManager;
 @Listeners({TestAllureListener.class})
 
 
 public class ChangeAccountTest extends BasePage {
 
-//    AppiumDriver<MobileElement> driver;
-//    public Properties prop;
-//    public BasePage basePage;
-//
-//
-//    @BeforeMethod
-//    public void setup() throws MalformedURLException {
-//        BasePage basePage = new BasePage();
-//        driver=basePage.initialize_driver();
-//        prop = basePage.initialize_Properties();
-
-    //    }
     @Test(priority = 1, description = "החלפת חשבון")
     public void Change_Account() throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);
@@ -45,7 +34,7 @@ public class ChangeAccountTest extends BasePage {
         Utils.wait_and_click_Element(driver,loginPage.AllowButton,2);
         loginPage.EnterButton.click();
         Thread.sleep(1000);
-        loginPage.loginsucces("4806006", "1q1q1q", "1q1q1q");
+        loginPage.loginsucces(PropertyManager.getInstance().getChangeAccountTestId(), PropertyManager.getInstance().getChangeAccountTestPass(), PropertyManager.getInstance().getChangeAccountTestPass());
         dashbordPage.TutorialSkip.click();
         if (driver.findElements(By.id("com.ideomobile.discount:id/bannerImageMainButtonX")).size() > 0) {
             driver.navigate().back();

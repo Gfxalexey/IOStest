@@ -46,6 +46,8 @@ public class PropertyManager {
     private  String WithdrawalOfDepositTestPass;
     private  String TradePageTestId;
     private  String TradePageTestPass;
+    private  String MyProfilePageTestId;
+    private  String MyProfilePageTestPass;
 
     public String getLoginPageTestId() {
         return LoginPageTestId;
@@ -165,6 +167,14 @@ public class PropertyManager {
         return TradePageTestPass;
     }
 
+    public String getMyProfilePageTestId() {
+        return MyProfilePageTestId;
+    }
+
+    public String getMyProfilePageTestPass() {
+        return MyProfilePageTestPass;
+    }
+
     //Get all configuration data and assign to related fields.
     private void loadData() {
         //Declare a properties object
@@ -205,6 +215,8 @@ public class PropertyManager {
         WithdrawalOfDepositTestPass = prop.getProperty("WithdrawalOfDepositTest.password");
         TradePageTestId = prop.getProperty("TradePageTest.id");
         TradePageTestPass = prop.getProperty("TradePageTest.password");
+        MyProfilePageTestId = prop.getProperty("MyProfilePageTest.id");
+        MyProfilePageTestPass = prop.getProperty("MyProfilePageTest.password");
 
 
     }

@@ -1,33 +1,14 @@
 
 import Pages.*;
-        import io.appium.java_client.AppiumDriver;
-        import io.appium.java_client.MobileBy;
-        import io.appium.java_client.MobileElement;
-        import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import Utils.PropertyManager;
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.*;
+ import Listeners.TestAllureListener;
 
-import java.net.MalformedURLException;
-        import java.util.List;
-        import java.util.Properties;
-        import Listeners.TestAllureListener;
 
 @Listeners({TestAllureListener.class})
 public class CreditCardOrderPageTest extends BasePage {
-//
-//    AppiumDriver<MobileElement> driver;
-//    public Properties prop;
-//    public BasePage basePage;
-//
-//
-//    @BeforeMethod
-//    public void setup() throws MalformedURLException {
-//        BasePage basePage = new BasePage();
-//        driver = basePage.initialize_driver();
-//        prop = basePage.initialize_Properties();
-//
-//    }
 
     @Test(priority = 1, description = "הזמנת כרטיס אשרי חדש ויזה")
     public void CreditCardOrder() throws InterruptedException {
@@ -37,7 +18,7 @@ public class CreditCardOrderPageTest extends BasePage {
         Utils.wait_and_click_Element(driver,loginPage.AllowButton,10);
         loginPage.EnterButton.click();
         Thread.sleep(1000);
-        loginPage.loginsucces("320555683", "1q1q1q", "1q1q1q");
+        loginPage.loginsucces(PropertyManager.getInstance().getCreditCardOrderPageTestId(), PropertyManager.getInstance().getCreditCardOrderPageTestPass(), PropertyManager.getInstance().getCreditCardOrderPageTestPass());
         dashbordPage.TutorialSkip.click();
         if (driver.findElements(By.id("com.ideomobile.discount:id/bannerImageImageView\n")).size() > 0) {
             driver.navigate().back();
@@ -67,7 +48,7 @@ public class CreditCardOrderPageTest extends BasePage {
         Utils.wait_and_click_Element(driver,loginPage.AllowButton,10);
         loginPage.EnterButton.click();
         Thread.sleep(1000);
-        loginPage.loginsucces("029360872", "1q1q1q", "1q1q1q");
+        loginPage.loginsucces(PropertyManager.getInstance().getCreditCardOrderPageTestId(), PropertyManager.getInstance().getCreditCardOrderPageTestPass(), PropertyManager.getInstance().getCreditCardOrderPageTestPass());
         dashbordPage.TutorialSkip.click();
         if (driver.findElements(By.id("com.ideomobile.discount:id/bannerImageImageView\n")).size() > 0) {
             driver.navigate().back();
@@ -86,12 +67,5 @@ public class CreditCardOrderPageTest extends BasePage {
         cardOrder.clickcontinueButton3();
         String massage = cardOrder.errorname.getText();
         Assert.assertEquals("יש להזין שם באותיות באנגלית", massage);
-
     }
-
 }
-//    @AfterMethod
-//    public void teardown() {
-//        driver.closeApp();
-//    }
-//}

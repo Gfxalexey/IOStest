@@ -10,24 +10,10 @@ import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
 import java.util.Properties;
-
+import Utils.PropertyManager;
 @Listeners({TestAllureListener.class})
 
 public class CheckBookOrderPageTest  extends  BasePage {
-
-    //    AppiumDriver<MobileElement> driver;
-//    public Properties prop;
-//    public BasePage basePage;
-//
-//
-//    @BeforeMethod
-//
-//    public void setup() throws MalformedURLException {
-//        BasePage basePage = new BasePage();
-//        driver=basePage.initialize_driver();
-//        prop = basePage.initialize_Properties();
-//
-//    }
     @Test(description = "הזמנת_פנקסי_שיקים")
     public void Order_Checkbook() throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);
@@ -36,10 +22,9 @@ public class CheckBookOrderPageTest  extends  BasePage {
         AllActionPage all = new AllActionPage(driver);
 //        loginPage.AllowButton.click();
         Utils.wait_and_click_Element(driver,loginPage.AllowButton,3);
-
         loginPage.EnterButton.click();
         Thread.sleep(1000);
-        loginPage.loginsucces("4806006", "1q1q1q", "1q1q1q");
+        loginPage.loginsucces(PropertyManager.getInstance().getCheckBookOrderPageTestId(), PropertyManager.getInstance().getCheckBookOrderPageTestPass(), PropertyManager.getInstance().getCheckBookOrderPageTestPass());
         dashbordPage.TutorialSkip.click();
         Utils.waitForbanner(driver,dashbordPage.Banner_X_Button,3);
 

@@ -9,22 +9,9 @@ import java.net.MalformedURLException;
 import java.util.List;
 import java.util.Properties;
 import Listeners.TestAllureListener;
-
+import Utils.PropertyManager;
 @Listeners({TestAllureListener.class})
 public class ForeignCurrencyConversionsPageTest extends BasePage {
-
-//    AppiumDriver<MobileElement> driver;
-//    public Properties prop;
-//    public BasePage basePage;
-//
-//
-//    @BeforeMethod
-//    public void setup() throws MalformedURLException {
-//        BasePage basePage = new BasePage();
-////        driver=basePage.initialize_driver();
-//        prop = basePage.initialize_Properties();
-//
-//    }
     @Test(priority = 1,description = "המרת מטח משקל לדולר")
     public void Convers_ILS_To_USD() throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);
@@ -34,7 +21,7 @@ public class ForeignCurrencyConversionsPageTest extends BasePage {
         Utils.wait_and_click_Element(driver,loginPage.AllowButton,10);
         loginPage.EnterButton.click();
         Thread.sleep(1000);
-        loginPage.loginsucces("4806006","1q1q1q","1q1q1q");
+        loginPage.loginsucces(PropertyManager.getInstance().getForeignCurrencyConversionsPageTestId(), PropertyManager.getInstance().getForeignCurrencyConversionsPageTestPass(), PropertyManager.getInstance().getForeignCurrencyConversionsPageTestPass());
         dashbordPage.TutorialSkip.click();
         if(driver.findElements(By.id("com.ideomobile.discount:id/bannerImageImageView")).size()>0){
             driver.navigate().back();
@@ -70,7 +57,7 @@ public class ForeignCurrencyConversionsPageTest extends BasePage {
         Utils.wait_and_click_Element(driver,loginPage.AllowButton,10);
         loginPage.EnterButton.click();
         Thread.sleep(1000);
-        loginPage.loginsucces("4806006","1q1q1q","1q1q1q");
+        loginPage.loginsucces(PropertyManager.getInstance().getForeignCurrencyConversionsPageTestId(), PropertyManager.getInstance().getForeignCurrencyConversionsPageTestPass(), PropertyManager.getInstance().getForeignCurrencyConversionsPageTestPass());
         dashbordPage.TutorialSkip.click();
         if(driver.findElements(By.id("com.ideomobile.discount:id/bannerImageMainButtonX")).size()>0){
             driver.navigate().back();
@@ -98,8 +85,4 @@ public class ForeignCurrencyConversionsPageTest extends BasePage {
         foreign.ScreenCaptureButton.click();
 
     }
-//    @AfterMethod
-//    public void teardown(){
-//        driver.closeApp();
-//    }
 }
