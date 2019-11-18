@@ -25,7 +25,7 @@ public class DashboardSwipeTest extends BasePage {
     public void SwipeToOsh() throws InterruptedException, IOException {
         LoginPage loginPage = new LoginPage(driver);
         DashbordPage dashbordPage = new DashbordPage(driver);
-        Utils.wait_and_click_Element(driver,loginPage.AllowButton,3);
+//        Utils.wait_and_click_Element(driver,loginPage.AllowButton,3);
         loginPage.EnterButton.click();
         Thread.sleep(1000);
         loginPage.loginsucces(PropertyManager.getInstance().getDashboardSwipeTestId(), PropertyManager.getInstance().getDashboardSwipeTestPass(), PropertyManager.getInstance().getDashboardSwipeTestPass());
@@ -40,7 +40,7 @@ public class DashboardSwipeTest extends BasePage {
         LoginPage loginPage = new LoginPage(driver);
         DashbordPage dashbordPage = new DashbordPage(driver);
         OpenDepositPage openDepositPage = new OpenDepositPage(driver);
-        Utils.wait_and_click_Element(driver,loginPage.AllowButton,3);
+//        Utils.wait_and_click_Element(driver,loginPage.AllowButton,3);
         loginPage.EnterButton.click();
         Thread.sleep(2000);
         loginPage.loginsucces(PropertyManager.getInstance().getDashboardSwipeTestId(), PropertyManager.getInstance().getDashboardSwipeTestPass(), PropertyManager.getInstance().getDashboardSwipeTestPass());
@@ -58,7 +58,7 @@ public class DashboardSwipeTest extends BasePage {
     public void SwipeToTrade() throws InterruptedException, IOException {
         LoginPage loginPage = new LoginPage(driver);
         DashbordPage dashbordPage=new DashbordPage(driver);
-        Utils.wait_and_click_Element(driver,loginPage.AllowButton,3);
+//        Utils.wait_and_click_Element(driver,loginPage.AllowButton,3);
         loginPage.EnterButton.click();
         Thread.sleep(1000);
         loginPage.loginsucces(PropertyManager.getInstance().getDashboardSwipeTestId(), PropertyManager.getInstance().getDashboardSwipeTestPass(), PropertyManager.getInstance().getDashboardSwipeTestPass());
@@ -77,7 +77,7 @@ public class DashboardSwipeTest extends BasePage {
     public void SwipeToLoans() throws InterruptedException, IOException {
         LoginPage loginPage = new LoginPage(driver);
         DashbordPage dashbordPage=new DashbordPage(driver);
-        Utils.wait_and_click_Element(driver,loginPage.AllowButton,10);
+//        Utils.wait_and_click_Element(driver,loginPage.AllowButton,10);
         loginPage.EnterButton.click();
         Thread.sleep(1000);
         loginPage.loginsucces(PropertyManager.getInstance().getDashboardSwipeTestId(), PropertyManager.getInstance().getDashboardSwipeTestPass(), PropertyManager.getInstance().getDashboardSwipeTestPass());
@@ -120,7 +120,7 @@ public class DashboardSwipeTest extends BasePage {
     public void SwipeToForeign() throws InterruptedException, IOException {
         LoginPage loginPage = new LoginPage(driver);
         DashbordPage dashbordPage = new DashbordPage(driver);
-        Utils.wait_and_click_Element(driver,loginPage.AllowButton,10);
+//        Utils.wait_and_click_Element(driver,loginPage.AllowButton,10);
         loginPage.EnterButton.click();
         Thread.sleep(1000);
         loginPage.loginsucces(PropertyManager.getInstance().getDashboardSwipeTestId(), PropertyManager.getInstance().getDashboardSwipeTestPass(), PropertyManager.getInstance().getDashboardSwipeTestPass());
@@ -144,7 +144,7 @@ public class DashboardSwipeTest extends BasePage {
     public void SwipeToMortage() throws InterruptedException, IOException {
         LoginPage loginPage = new LoginPage(driver);
         DashbordPage dashbordPage = new DashbordPage(driver);
-        Utils.wait_and_click_Element(driver,loginPage.AllowButton,3);
+//        Utils.wait_and_click_Element(driver,loginPage.AllowButton,3);
         loginPage.EnterButton.click();
         Thread.sleep(1000);
         loginPage.loginsucces(PropertyManager.getInstance().getDashboardSwipeTestId(), PropertyManager.getInstance().getDashboardSwipeTestPass(), PropertyManager.getInstance().getDashboardSwipeTestPass());

@@ -41,6 +41,9 @@ public class BasePage {
         try {
 
             DesiredCapabilities capabilities = new DesiredCapabilities();
+//            capabilities.setCapability(MobileCapabilityType.NO_RESET,"true");
+//            capabilities.setCapability(MobileCapabilityType.FULL_RESET,"false");
+            capabilities.setCapability(AndroidMobileCapabilityType.AUTO_GRANT_PERMISSIONS,"true");
             capabilities.setCapability("platformVersion", platformVersion);
             capabilities.setCapability("platformName", "Android");
             capabilities.setCapability("automationName", "UiAutomator2");

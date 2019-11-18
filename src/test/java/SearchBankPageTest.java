@@ -44,7 +44,6 @@ public class SearchBankPageTest extends BasePage{
         Utils.scrollToText("יציאה",driver);
         Utils.waitForElement(driver,loginPage.snapshot,10);
         Utils.swipe(driver,Direction.RIGHT,5);
-        searchBankPage.allowbutton.click();
         Thread.sleep(2000);
 
 

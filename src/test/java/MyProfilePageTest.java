@@ -16,19 +16,7 @@ import java.util.Properties;
 
 public class MyProfilePageTest extends BasePage{
 
-//    AppiumDriver<MobileElement> driver;
-//    public Properties prop;
-//    public BasePage basePage;
-//
-//
-//    @BeforeMethod
-//
-//    public void setup() throws MalformedURLException {
-//        BasePage basePage = new BasePage();
-////        driver=basePage.initialize_driver();
-//        prop = basePage.initialize_Properties();
-//
-//    }
+
     @Test(description = "דף הפרופיל שלי")
     public void MyProfileDashbord() throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);

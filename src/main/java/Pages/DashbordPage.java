@@ -58,10 +58,14 @@ public class DashbordPage {
     public MobileElement MyProfile_button;
     @AndroidFindBy(id = "com.ideomobile.discount:id/bannerImageImageView")
     public MobileElement Banner;
-    @AndroidFindBy(id = "com.ideomobile.discount:id/bannerImageMainButtonX")
-    public MobileElement Banner_X_Button;
+//    @AndroidFindBy(id = "com.ideomobile.discount:id/bannerImageMainButtonX")
+//    public MobileElement Banner_X_Button;
     @AndroidFindBy(id = "com.ideomobile.discount:id/newMainMenu_myInsights_title")
     public MobileElement myInsights;
+    @AndroidFindBy(id = "com.ideomobile.discount:id/bannerImageMainButtonX")
+    public MobileElement bannerImageMainButtonX;
+    @AndroidFindBy(id = "com.ideomobile.discount:id/DashboardButton")
+    public MobileElement Dashboard_Home_Button;
 
 
     //-------------------------------------------------------------------------------------------------------------------------------------

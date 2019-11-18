@@ -18,7 +18,7 @@ public class ForeignCurrencyConversionsPageTest extends BasePage {
         AllActionPage all=new AllActionPage(driver);
         DashbordPage dashbordPage = new DashbordPage(driver);
         ForeignCurrencyConversionsPage foreign =new ForeignCurrencyConversionsPage(driver);
-        Utils.wait_and_click_Element(driver,loginPage.AllowButton,10);
+//        Utils.wait_and_click_Element(driver,loginPage.AllowButton,10);
         loginPage.EnterButton.click();
         Thread.sleep(1000);
         loginPage.loginsucces(PropertyManager.getInstance().getForeignCurrencyConversionsPageTestId(), PropertyManager.getInstance().getForeignCurrencyConversionsPageTestPass(), PropertyManager.getInstance().getForeignCurrencyConversionsPageTestPass());
@@ -28,7 +28,7 @@ public class ForeignCurrencyConversionsPageTest extends BasePage {
         }
         dashbordPage.HamburgerButton.click();
         dashbordPage.allaction.click();
-        Utils.scrollToText("המרת מט",driver);
+        Utils.scrollToText("המרת",driver);
         foreign.click_ILSButton();
         foreign.click_continueButton();
         foreign.click_USDButton();
@@ -54,7 +54,7 @@ public class ForeignCurrencyConversionsPageTest extends BasePage {
         DashbordPage dashbordPage = new DashbordPage(driver);
         ForeignCurrencyConversionsPage foreign =new ForeignCurrencyConversionsPage(driver);
         AllActionPage all=new AllActionPage(driver);
-        Utils.wait_and_click_Element(driver,loginPage.AllowButton,10);
+//        Utils.wait_and_click_Element(driver,loginPage.AllowButton,10);
         loginPage.EnterButton.click();
         Thread.sleep(1000);
         loginPage.loginsucces(PropertyManager.getInstance().getForeignCurrencyConversionsPageTestId(), PropertyManager.getInstance().getForeignCurrencyConversionsPageTestPass(), PropertyManager.getInstance().getForeignCurrencyConversionsPageTestPass());
@@ -64,7 +64,7 @@ public class ForeignCurrencyConversionsPageTest extends BasePage {
         }
         dashbordPage.HamburgerButton.click();
         dashbordPage.allaction.click();
-        Utils.scrollToText("המרת מט",driver);
+        Utils.scrollToText("המרת ",driver);
 
         foreign.click_USDButton();
         foreign.click_continueButton();

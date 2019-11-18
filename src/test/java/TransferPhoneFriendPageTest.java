@@ -10,42 +10,32 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import javax.rmi.CORBA.Util;
 import java.net.MalformedURLException;
 import java.util.List;
 import java.util.Properties;
 
 public class TransferPhoneFriendPageTest extends BasePage {
 
-//
-//    AppiumDriver<MobileElement> driver;
-//    public Properties prop;
-//    public BasePage basePage;
-//
-//    @BeforeMethod
-//    public void setup() throws MalformedURLException {
-//        BasePage basePage = new BasePage();
-//        driver=basePage.initialize_driver();
-//        prop = basePage.initialize_Properties();
-//
-//    }
 
     @Test(description = "שליחת_כסף_לחבר")
     public void Send_Money_Friend() throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);
         DashbordPage dashbordPage = new DashbordPage(driver);
         TransferPhoneFriendPage transferPhoneFriendPage = new TransferPhoneFriendPage(driver);
-        Utils.wait_and_click_Element(driver,loginPage.AllowButton,3);
+//        Utils.wait_and_click_Element(driver,loginPage.AllowButton,3);
         loginPage.EnterButton.click();
         Thread.sleep(1000);
         loginPage.loginsucces("320555683", "1q1q1q", "1q1q1q");
         dashbordPage.TutorialSkip.click();
-        if (driver.findElements(By.id("com.ideomobile.discount:id/bannerImageImageView")).size() > 0) {
-            driver.navigate().back();
-        }
+        Utils.wait_and_click_Element(driver,dashbordPage.bannerImageMainButtonX,1);
+//        if (driver.findElements(By.id("com.ideomobile.discount:id/bannerImageImageView")).size() > 0) {
+//            driver.navigate().back();
+//        }
         dashbordPage.HamburgerButton.click();
         dashbordPage.clicktransferFriendCashButton();
         transferPhoneFriendPage.SelectFromPhone();
-        transferPhoneFriendPage.cliclpermissionallowbutton();
+//        transferPhoneFriendPage.cliclpermissionallowbutton();
         driver.navigate().back();
         Thread.sleep(1000);
         driver.navigate().back();
@@ -64,29 +54,4 @@ public class TransferPhoneFriendPageTest extends BasePage {
         transferPhoneFriendPage.clickCaptureButton();
     }
 }
-//        @AfterMethod
-//        public void teardown(){
-//            driver.closeApp();
-//        }
-//    }
-
-
-
-
-
-
-
-
-
-
-        //    List<MobileElement> elements = driver.findElements(MobileBy.AndroidUIAutomator("new UiSelector().text(\"Automation\")"));
-     //   System.out.println(elements.size());
-
-   //   WebElement  elements1 = driver.findElements(MobileBy.AndroidUIAutomator("new UiSelector().resourceIdMatches(\".*contactName\").text(\"Automation\")");
-   //     System.out.println(elements.size());
-
-      /*  transferPhoneFriendPage.typeNameFriend("aut");
-        Thread.sleep(2000);
-        transferPhoneFriendPage.clickNameFriend();
-*/
 

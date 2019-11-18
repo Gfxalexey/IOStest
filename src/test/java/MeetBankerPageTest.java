@@ -6,13 +6,12 @@ import org.testng.annotations.*;
 import Listeners.TestAllureListener;
 import Utils.PropertyManager;
 
-import javax.rmi.CORBA.Util;
 
 @Listeners({TestAllureListener.class})
 
 public class MeetBankerPageTest extends BasePage {
 
-    @Test(description = "קביעת פגישה עם יועץ",priority = 1)
+    @Test(priority = 1, description = "קביעת פגישה עם יועץ")
     public void Start_Meet_with_Investment() throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);
         DashbordPage dashbordPage = new DashbordPage(driver);
@@ -42,7 +41,7 @@ public class MeetBankerPageTest extends BasePage {
 
     }
 
-    @Test(description = "ביטול פגישה עם בנקאי" , priority = 2)
+    @Test(priority = 3, description = "ביטול פגישה עם בנקאי" )
 
     public void Cancel_Meet_with_Investment() throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);

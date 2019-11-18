@@ -31,7 +31,7 @@ public class ChangeAccountTest extends BasePage {
         LoginPage loginPage = new LoginPage(driver);
         DashbordPage dashbordPage = new DashbordPage(driver);
         ChangeAccountPage changeAccountPage = new ChangeAccountPage(driver);
-        Utils.wait_and_click_Element(driver,loginPage.AllowButton,2);
+//        Utils.wait_and_click_Element(driver,loginPage.AllowButton,2);
         loginPage.EnterButton.click();
         Thread.sleep(1000);
         loginPage.loginsucces(PropertyManager.getInstance().getChangeAccountTestId(), PropertyManager.getInstance().getChangeAccountTestPass(), PropertyManager.getInstance().getChangeAccountTestPass());

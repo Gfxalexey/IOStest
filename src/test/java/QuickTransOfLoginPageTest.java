@@ -25,18 +25,7 @@ import Listeners.TestAllureListener;
 @Listeners({TestAllureListener.class})
 
 public class QuickTransOfLoginPageTest extends BasePage {
-//    AppiumDriver<MobileElement> driver;
-//    public Properties prop;
-//    public BasePage basePage;
-//
-//
-//    @BeforeMethod
-//    public void setup() throws MalformedURLException {
-//        BasePage basePage = new BasePage();
-////        driver=basePage.initialize_driver();
-//        prop = basePage.initialize_Properties();
-//
-//    }
+
     @Test(priority = 0,description = "ביצוע העברה מתפריט מהיר")
     public void QuickTransOfLogin () throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);
@@ -76,7 +65,6 @@ public class QuickTransOfLoginPageTest extends BasePage {
         Utils.waitForElement(driver,transfersPage.AcceptButton,10);
         transfersPage.clickAcceptButton();
         transfersPage.clickCaptureButton();
-        loginPage.AllowButton.click();
     }
 
 

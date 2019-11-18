@@ -4,24 +4,50 @@
 
     <test name="XIAOMI Mi Mix2 android 8 Test">
 <!--        <parameter name="device" value="192.168.1.132:5555"></parameter>-->
-        <parameter name="device" value="192.168.0.103:5555"></parameter>
+        <parameter name="device" value="192.168.1.137:5555"></parameter>
     <parameter name="platformVersion" value="9"></parameter>
         <parameter name="appiumServer" value="http://127.0.0.1:4721/wd/hub"></parameter>
         <parameter name="systemPort" value="8201"></parameter>
 
         <classes>
+<!--            <class name="LoginPageTest"/>-->
+<!--            <class name="MyProfilePageTest"/>-->
+<!--            <class name="OpenDepositTest"/>-->
+<!--            <class name="QuickwithdrawalOfLoginPageTest"/>-->
+<!--            <class name="SearchBankPageTest"/>-->
+<!--            <class name="SendMassageToBranchPageTest"/>-->
+<!--            <class name="SwipeLoginPageTest"/>-->
+
+            <class name="TradePageTest"/>
+            <class name="TransferPhoneFriendPageTest"/>
+<!--            <class name="TransfersPageTest"/>-->
+<!--            <class name="WithdrawalOfDepositTest"/>-->
+<!--            <class name="CashWithdrawalPageTest"/>-->
+            <class name="ChangeAccountTest"/>
+            <class name="CheckBookOrderPageTest"/>
+            <class name="CreditCardOrderPageTest"/>
+            <class name="CreditCardPageTest"/>
+            <class name="DashboardSwipeTest"/>
+            <class name="ForeignCurrencyConversionsPageTest"/>
+            <class name="GetLoanPageTest"/>
             <class name="LoginPageTest"/>
+            <class name="LogOutTest"/>
+            <class name="MeetBankerPageTest"/>
             <class name="MyProfilePageTest"/>
             <class name="OpenDepositTest"/>
+            <class name="QuickTransOfLoginPageTest"/>
             <class name="QuickwithdrawalOfLoginPageTest"/>
             <class name="SearchBankPageTest"/>
             <class name="SendMassageToBranchPageTest"/>
             <class name="SwipeLoginPageTest"/>
+
+
+
         </classes>
     </test>
     <test name="Samsung NOTE 9 android 9 Test">
 <!--        <parameter name="device" value="192.168.1.152:5555"></parameter>-->
-        <parameter name="device" value="192.168.0.101:5555"></parameter>
+        <parameter name="device" value="192.168.1.152:5555"></parameter>
         <parameter name="platformVersion" value="9"></parameter>
         <parameter name="appiumServer" value="http://127.0.0.1:4729/wd/hub"></parameter>
         <parameter name="systemPort" value="8203"></parameter>
@@ -35,24 +61,28 @@
 <!--            <class name="SendMassageToBranchPageTest"/>-->
 <!--            <class name="SwipeLoginPageTest"/>-->
 
+            <class name="CashWithdrawalPageTest"/>
             <class name="ChangeAccountTest"/>
+            <class name="CheckBookOrderPageTest"/>
             <class name="CreditCardOrderPageTest"/>
             <class name="CreditCardPageTest"/>
             <class name="DashboardSwipeTest"/>
             <class name="ForeignCurrencyConversionsPageTest"/>
             <class name="GetLoanPageTest"/>
             <class name="LoginPageTest"/>
-<!--            <class name="LogOutTest"/>-->
-<!--            <class name="MyProfilePageTest"/>-->
-<!--            <class name="OpenDepositTest"/>-->
-<!--            <class name="QuickwithdrawalOfLoginPageTest"/>-->
-<!--            <class name="SearchBankPageTest"/>-->
-<!--            <class name="SendMassageToBranchPageTest"/>-->
-<!--            <class name="SwipeLoginPageTest"/>-->
-<!--            <class name="TradePageTest"/>-->
-<!--            <class name="TransferPhoneFriendPageTest"/>-->
-<!--            <class name="TransfersPageTest"/>-->
-<!--            <class name="WithdrawalOfDepositTest"/>-->
+            <class name="LogOutTest"/>
+            <class name="MeetBankerPageTest"/>
+            <class name="MyProfilePageTest"/>
+            <class name="OpenDepositTest"/>
+            <class name="QuickTransOfLoginPageTest"/>
+            <class name="QuickwithdrawalOfLoginPageTest"/>
+            <class name="SearchBankPageTest"/>
+            <class name="SendMassageToBranchPageTest"/>
+            <class name="SwipeLoginPageTest"/>
+            <class name="TradePageTest"/>
+            <class name="TransferPhoneFriendPageTest"/>
+            <class name="TransfersPageTest"/>
+            <class name="WithdrawalOfDepositTest"/>
         </classes>
     </test>
 <!--    <test name="oneplus Test">-->

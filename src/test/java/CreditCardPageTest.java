@@ -23,7 +23,7 @@ public class CreditCardPageTest extends  BasePage{
         LoginPage loginPage = new LoginPage(driver);
         DashbordPage dashbordPage = new DashbordPage(driver);
         CreditCardPage creditCardPage=new CreditCardPage(driver);
-        Utils.wait_and_click_Element(driver,loginPage.AllowButton,10);
+//        Utils.wait_and_click_Element(driver,loginPage.AllowButton,10);
         loginPage.EnterButton.click();
         Thread.sleep(1000);
         loginPage.loginsucces(PropertyManager.getInstance().getCreditCardPageTestId(), PropertyManager.getInstance().getCreditCardPageTestPass(), PropertyManager.getInstance().getCreditCardPageTestPass());

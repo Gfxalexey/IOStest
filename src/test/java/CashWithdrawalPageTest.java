@@ -7,12 +7,12 @@ import Utils.PropertyManager;
 @Listeners({TestAllureListener.class})
 public class CashWithdrawalPageTest extends BasePage {
 
-    @Test(priority = 0, description = "משיכת מזומן ללא כרטיס")
+    @Test(priority = 1, description = "משיכת מזומן ללא כרטיס")
     public void CashWithdrawal() throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);
         DashbordPage dashbordPage = new DashbordPage(driver);
         CashWithdrawalPage cashWithdrawalPage = new CashWithdrawalPage(driver);
-        Utils.wait_and_click_Element(driver,loginPage.AllowButton,3);
+//        Utils.wait_and_click_Element(driver,loginPage.AllowButton,3);
 
 //            loginPage.AllowButton.click();
         loginPage.EnterButton.click();
@@ -36,7 +36,7 @@ public class CashWithdrawalPageTest extends BasePage {
 
     }
 
-    @Test(priority = 1, description = "ביטול_מזומן_ללא_כרטיס")
+    @Test(priority = 2, description = "ביטול_מזומן_ללא_כרטיס")
     public void CancelCashWithdrawal() throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);
         DashbordPage dashbordPage = new DashbordPage(driver);

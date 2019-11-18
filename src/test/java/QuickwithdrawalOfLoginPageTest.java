@@ -25,24 +25,15 @@ import Listeners.TestAllureListener;
 @Listeners({TestAllureListener.class})
 
 public class QuickwithdrawalOfLoginPageTest extends BasePage {
-//    AppiumDriver<MobileElement> driver;
-//    public Properties prop;
-//    public BasePage basePage;
-//
-//
-//    @BeforeMethod
-//    public void setup() throws MalformedURLException {
-//        BasePage basePage = new BasePage();
-////        driver=basePage.initialize_driver();
-//        prop = basePage.initialize_Properties();
-//
-//    }
+
+
+
     @Test(description = "משיכת_מזומן_מדף_לוגין")
     public void QuickCash() throws InterruptedException {
+
         LoginPage loginPage = new LoginPage(driver);
         DashbordPage dashbordPage = new DashbordPage(driver);
         CashWithdrawalPage cashWithdrawalPage = new CashWithdrawalPage(driver);
-        Utils.wait_and_click_Element(driver,loginPage.AllowButton,3);
         loginPage.EnterButton.click();
         Thread.sleep(1000);
         loginPage.loginsucces("320555683","1q1q1q","1q1q1q");

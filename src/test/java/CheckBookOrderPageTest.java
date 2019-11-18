@@ -20,21 +20,21 @@ public class CheckBookOrderPageTest  extends  BasePage {
         DashbordPage dashbordPage = new DashbordPage(driver);
         CheckBookOrderPage checks = new CheckBookOrderPage(driver);
         AllActionPage all = new AllActionPage(driver);
-//        loginPage.AllowButton.click();
-        Utils.wait_and_click_Element(driver,loginPage.AllowButton,3);
+//        Utils.wait_and_click_Element(driver,loginPage.AllowButton,3);
         loginPage.EnterButton.click();
         Thread.sleep(1000);
         loginPage.loginsucces(PropertyManager.getInstance().getCheckBookOrderPageTestId(), PropertyManager.getInstance().getCheckBookOrderPageTestPass(), PropertyManager.getInstance().getCheckBookOrderPageTestPass());
         dashbordPage.TutorialSkip.click();
-        Utils.waitForbanner(driver,dashbordPage.Banner_X_Button,3);
+        Utils.waitForbanner(driver,dashbordPage.Banner,3);
 
 //        if (driver.findElements(By.id("com.ideomobile.discount:id/bannerImageImageView")).size() > 0) {
 //            driver.navigate().back();
 //        }
         dashbordPage.HamburgerButton.click();
         dashbordPage.clickallaction();
-        Utils.scrollScreen(driver);
-        all.orderChecksBook.click();
+        Utils.scrollToText("הזמנת פנקסי שיקים",driver);
+//        Utils.scrollScreen(driver);
+//        all.orderChecksBook.click();
         Thread.sleep(1000);
         Utils.waitForElement(driver, checks.nextButton, 10);
         checks.nextButton.click();
@@ -50,8 +50,3 @@ public class CheckBookOrderPageTest  extends  BasePage {
     }
 
 }
-//        @AfterMethod
-//        public void teardown () {
-//            driver.closeApp();
-//        }
-//    }

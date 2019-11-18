@@ -18,7 +18,7 @@ public class GetLoanPage {
     public MobileElement loanTitel;
     @AndroidFindBy(id = "com.ideomobile.discount:id/get_loan_terms") //תנאי הלוואה
     public MobileElement loanTerms;
-    @AndroidFindBy(id = "com.ideomobile.discount:id/regular_loan_continue_btn")
+    @AndroidFindBy(id = "com.ideomobile.discount:id/loan_continue_btn")
     public MobileElement loanContinueButton1;
     @AndroidFindBy(id = "com.ideomobile.discount:id/loansSelectionsLobbyCancelBtn")
     public MobileElement loanCancelButton;

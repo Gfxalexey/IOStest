@@ -25,18 +25,7 @@ import java.net.MalformedURLException;
 @Listeners({TestAllureListener.class})
 
 public class LogOutTest extends BasePage  {
-//    AppiumDriver<MobileElement> driver;
-//    public Properties prop;
-//    public BasePage basePage;
 
-
-//    @BeforeMethod
-//    public void setup() throws MalformedURLException {
-//        BasePage basePage = new BasePage();
-//        driver=basePage.initialize_driver();
-//        prop = basePage.initialize_Properties();
-//
-//    }
     @Test(description = "יצאה מהחשבון")
     public void Loguot_Test() throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);
@@ -54,8 +43,5 @@ public class LogOutTest extends BasePage  {
         Utils.scrollToText("יציאה",driver);
         Thread.sleep(3000);
     }
-//    @AfterMethod
-//    public void teardown(){
-//        driver.closeApp();
-//    }
+
 }
