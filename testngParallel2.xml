@@ -17,6 +17,7 @@
             <class name="LoginPageTest"/>
             <class name="LogOutTest"/>
             <class name="ChangeAccountNamePageTest"/>
+            <class name="DidiPageTest"/>
 
 
 
@@ -46,6 +47,11 @@
             <class name="CashWithdrawalPageTest"/>
             <class name="CreditCardOrderPageTest"/>
             <class name="SwipeLoginPageTest"/>
+            <class name="CancelCyclicTransferPageTest"/>
+            <class name="ToucherPageTest"/>
+            <class name="TwoGoCardPageTest"/>
+
+
 
 
 

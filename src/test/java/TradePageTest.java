@@ -34,9 +34,7 @@ public class TradePageTest extends BasePage{
         Thread.sleep(1000);
         loginPage.loginsucces(PropertyManager.getInstance().getTradePageTestId(), PropertyManager.getInstance().getTradePageTestPass(), PropertyManager.getInstance().getTradePageTestPass());
         dashbordPage.TutorialSkip.click();
-        if (driver.findElements(By.id("com.ideomobile.discount:id/bannerImageImageView")).size() > 0) {
-            driver.navigate().back();
-        }
+        Utils.waitForbanner(driver, dashbordPage.Banner, 3);
         dashbordPage.click_TradeLobby();
 //        Assert.assertEquals("תשואת תיק נומינלית מתחילת שנה:", tradePage.securitiesSummaryFragment.getText());
         Assert.assertEquals("שווי תיק",tradePage.summary_fragment.getText());

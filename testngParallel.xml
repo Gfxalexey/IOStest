@@ -83,6 +83,7 @@
             <class name="TransferPhoneFriendPageTest"/>
             <class name="TransfersPageTest"/>
             <class name="WithdrawalOfDepositTest"/>
+
         </classes>
     </test>
 <!--    <test name="oneplus Test">-->

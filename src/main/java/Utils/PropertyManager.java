@@ -50,6 +50,32 @@ public class PropertyManager {
     private  String MyProfilePageTestPass;
     private  String CancelCyclicTransferPageTestId;
     private  String CancelCyclicTransferPageTestPass;
+    private  String ToucherPageTestId;
+    private  String VIPFlyPageTestPass;
+    private  String VIPFlyPageTestId;
+    private  String TwoGoCardPageTestPass;
+
+    public String getTwoGoCardPageTestPass() {
+        return TwoGoCardPageTestPass;
+    }
+
+    public String getTwoGoCardPageTestId() {
+        return TwoGoCardPageTestId;
+    }
+
+    private  String TwoGoCardPageTestId;
+
+    public String getToucherPageTestId() {
+        return ToucherPageTestId;
+    }
+
+    public String getToucherPageTestPass() {
+        return ToucherPageTestPass;
+    }
+
+    private  String ToucherPageTestPass;
+
+
 
     public String getLoginPageTestId() {
         return LoginPageTestId;
@@ -185,6 +211,14 @@ public class PropertyManager {
         return CancelCyclicTransferPageTestPass;
     }
 
+    public String getVIPFlyPageTestPass() {
+        return VIPFlyPageTestPass;
+    }
+
+    public String getVIPFlyPageTestId() {
+        return VIPFlyPageTestId;
+    }
+
     //Get all configuration data and assign to related fields.
     private void loadData() {
         //Declare a properties object
@@ -229,6 +263,12 @@ public class PropertyManager {
         MyProfilePageTestPass = prop.getProperty("MyProfilePageTest.password");
         CancelCyclicTransferPageTestId = prop.getProperty("CancelCyclicTransferPageTest.id");
         CancelCyclicTransferPageTestPass = prop.getProperty("CancelCyclicTransferPageTest.password");
+        ToucherPageTestId = prop.getProperty("ToucherPageTest.id");
+        ToucherPageTestPass = prop.getProperty("ToucherPageTest.password");
+        VIPFlyPageTestId = prop.getProperty("VIPFlyPageTest.id");
+        VIPFlyPageTestPass = prop.getProperty("VIPFlyPageTest.password");
+        TwoGoCardPageTestId = prop.getProperty("TwoGoCardPageTest.id");
+        TwoGoCardPageTestPass = prop.getProperty("TwoGoCardPageTest.password");
 
 
     }
