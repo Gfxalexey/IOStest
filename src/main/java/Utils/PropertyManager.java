@@ -48,6 +48,8 @@ public class PropertyManager {
     private  String TradePageTestPass;
     private  String MyProfilePageTestId;
     private  String MyProfilePageTestPass;
+    private  String CancelCyclicTransferPageTestId;
+    private  String CancelCyclicTransferPageTestPass;
 
     public String getLoginPageTestId() {
         return LoginPageTestId;
@@ -175,6 +177,14 @@ public class PropertyManager {
         return MyProfilePageTestPass;
     }
 
+    public String getCancelCyclicTransferPageTestId() {
+        return CancelCyclicTransferPageTestId;
+    }
+
+    public String getCancelCyclicTransferPageTestPass() {
+        return CancelCyclicTransferPageTestPass;
+    }
+
     //Get all configuration data and assign to related fields.
     private void loadData() {
         //Declare a properties object
@@ -217,6 +227,8 @@ public class PropertyManager {
         TradePageTestPass = prop.getProperty("TradePageTest.password");
         MyProfilePageTestId = prop.getProperty("MyProfilePageTest.id");
         MyProfilePageTestPass = prop.getProperty("MyProfilePageTest.password");
+        CancelCyclicTransferPageTestId = prop.getProperty("CancelCyclicTransferPageTest.id");
+        CancelCyclicTransferPageTestPass = prop.getProperty("CancelCyclicTransferPageTest.password");
 
 
     }

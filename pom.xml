@@ -7,6 +7,7 @@
     <groupId>1appium</groupId>
     <artifactId>com.discountbankappium</artifactId>
     <version>1.0-SNAPSHOT</version>
+
     <parent>
         <groupId>ru.yandex.qatools.allure</groupId>
         <artifactId>allure-examples-parent</artifactId>

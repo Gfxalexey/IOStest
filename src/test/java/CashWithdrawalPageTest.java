@@ -12,9 +12,6 @@ public class CashWithdrawalPageTest extends BasePage {
         LoginPage loginPage = new LoginPage(driver);
         DashbordPage dashbordPage = new DashbordPage(driver);
         CashWithdrawalPage cashWithdrawalPage = new CashWithdrawalPage(driver);
-//        Utils.wait_and_click_Element(driver,loginPage.AllowButton,3);
-
-//            loginPage.AllowButton.click();
         loginPage.EnterButton.click();
         Thread.sleep(1000);
         loginPage.loginsucces(PropertyManager.getInstance().getCashWithdrawalPageTestId(), PropertyManager.getInstance().getCashWithdrawalPageTestPass(), PropertyManager.getInstance().getCashWithdrawalPageTestPass());

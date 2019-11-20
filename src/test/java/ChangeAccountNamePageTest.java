@@ -1,7 +1,12 @@
 import Pages.*;
 import Utils.PropertyManager;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+import Listeners.TestAllureListener;
+
+
+@Listeners({TestAllureListener.class})
 
 public class ChangeAccountNamePageTest extends BasePage {
 
