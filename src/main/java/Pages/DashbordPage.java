@@ -66,6 +66,8 @@ public class DashbordPage {
     public MobileElement bannerImageMainButtonX;
     @AndroidFindBy(id = "com.ideomobile.discount:id/DashboardButton")
     public MobileElement Dashboard_Home_Button;
+    @AndroidFindBy(id = "com.ideomobile.discount:id/newMainMenu_settingsButton")
+    public MobileElement settingsButton;
 
 
     //-------------------------------------------------------------------------------------------------------------------------------------

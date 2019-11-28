@@ -1,6 +1,8 @@
 package Pages;
 
 import io.appium.java_client.*;
+import io.appium.java_client.android.AndroidTouchAction;
+import io.appium.java_client.touch.offset.ElementOption;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -201,6 +203,11 @@ public class Utils {
     }
 
 
+public static void DragElement(WebElement element,WebElement ToElement, AppiumDriver<MobileElement> driver, long duration)  {
+    AndroidTouchAction touch = new AndroidTouchAction(driver);
+    touch.longPress(ElementOption.element(element)).waitAction(waitOptions(ofSeconds(duration)))
+            .moveTo(ElementOption.element(ToElement)).release().perform();
+}
 
 }
 

@@ -20,6 +20,7 @@ public class TwoGoCardPageTest extends BasePage {
         dashbordPage.click_HamburgerButton();
         dashbordPage.allaction.click();
         Utils.scrollToText("טעינת 2go",driver);
+        Utils.waitForElement(driver,go.StepTitle,10);
         go.type_Amount("25");
         driver.hideKeyboard();
         go.click_ContinueButton_1();

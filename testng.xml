@@ -2,16 +2,16 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite" parallel="tests" thread-count="4">
 
-<!--        <test name="samsung galaxy s9+ test">-->
-<!--            <parameter name="device" value="10.0.2.26:5555"></parameter>-->
-<!--        <parameter name="platformVersion" value="9"></parameter>-->
-<!--            <parameter name="appiumServer" value="http://127.0.0.1:4721/wd/hub"></parameter>-->
-<!--            <parameter name="systemPort" value="8201"></parameter>-->
+        <test name="xiaomi mix2 test">
+            <parameter name="device" value="192.168.0.100:5555"></parameter>
+        <parameter name="platformVersion" value="9"></parameter>
+            <parameter name="appiumServer" value="http://127.0.0.1:4721/wd/hub"></parameter>
+            <parameter name="systemPort" value="8201"></parameter>
 
-<!--            <classes>-->
-<!--                <class name="DidiPageTest"/>-->
-<!--            </classes>-->
-<!--        </test>-->
+            <classes>
+                <class name="DidiPageTest"/>
+            </classes>
+        </test>
     <test name="samsung note9 Test">
         <parameter name="device" value="192.168.0.101:5555"></parameter>
         <parameter name="platformVersion" value="9"></parameter>
@@ -20,7 +20,7 @@
 <!--192.168.1.152:5555-->
 <!--        192.168.0.102:5555-->
         <classes>
-            <class name="TwoGoCardPageTest">
+            <class name="SettingsPageTest">
 <!--            <methods>-->
 <!--                <include name="DIDI_v2" />-->
 <!--            </methods>-->

@@ -52,6 +52,12 @@ public class LoginPage {
     public  MobileElement quickcheckDeposit;
     @AndroidFindBy(id = "com.ideomobile.discount:id/loginScreen_quickActions_loanRequestLayout")
     public  MobileElement  quickloan;
+    @AndroidFindBy(id = "com.ideomobile.discount:id/snapshotLayout_quickLook_ButtonLayout")
+    public  MobileElement  login_snapshot_button;
+    @AndroidFindBy(id = "com.ideomobile.discount:id/snapshotOshAmountText")
+    public  MobileElement  snapshotOshAmount;
+    @AndroidFindBy(id = "com.ideomobile.discount:id/HelloUser")
+    public  MobileElement  HelloUser;
 
 @Step("לחיצה על העברות מדף לוגין")
 public LoginPage clickquicktransfer(){

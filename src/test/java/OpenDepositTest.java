@@ -27,18 +27,7 @@ import static java.time.Duration.ofSeconds;
 @Listeners({TestAllureListener.class})
 
 public class OpenDepositTest extends BasePage {
-//    AppiumDriver<MobileElement> driver;
-//    public Properties prop;
-//    public BasePage basePage;
-//
-//
-//    @BeforeMethod
-//    public void setup() throws MalformedURLException {
-//        BasePage basePage = new BasePage();
-////        driver=basePage.initialize_driver();
-//        prop = basePage.initialize_Properties();
-//
-//    }
+
     @Test(priority = 0,description = "הפקדה לפיקדון חדש")
     public void Deposit_to_deposit() throws InterruptedException {
         driver.manage (). timeouts (). implicitlyWait (0, TimeUnit.SECONDS);

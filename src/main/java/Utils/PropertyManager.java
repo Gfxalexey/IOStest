@@ -54,6 +54,17 @@ public class PropertyManager {
     private  String VIPFlyPageTestPass;
     private  String VIPFlyPageTestId;
     private  String TwoGoCardPageTestPass;
+    private  String SettingsPageTestId;
+
+    public String getSettingsPageTestId() {
+        return SettingsPageTestId;
+    }
+
+    public String getSettingsPageTestPass() {
+        return SettingsPageTestPass;
+    }
+
+    private  String SettingsPageTestPass;
 
     public String getTwoGoCardPageTestPass() {
         return TwoGoCardPageTestPass;
@@ -269,6 +280,8 @@ public class PropertyManager {
         VIPFlyPageTestPass = prop.getProperty("VIPFlyPageTest.password");
         TwoGoCardPageTestId = prop.getProperty("TwoGoCardPageTest.id");
         TwoGoCardPageTestPass = prop.getProperty("TwoGoCardPageTest.password");
+        SettingsPageTestId = prop.getProperty("SettingsPageTest.id");
+        SettingsPageTestPass = prop.getProperty("SettingsPageTest.password");
 
 
     }
