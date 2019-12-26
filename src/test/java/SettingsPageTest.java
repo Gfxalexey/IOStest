@@ -9,8 +9,6 @@ import io.appium.java_client.touch.offset.ElementOption;
 import org.openqa.selenium.interactions.touch.TouchActions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.*;
-
-import javax.rmi.CORBA.Util;
 import java.net.MalformedURLException;
 import java.util.Properties;
 

@@ -1,14 +1,15 @@
 package Pages;
-import io.appium.java_client.*;
+
 import Scrolling.MobileActions;
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.pagefactory.AppiumFieldDecorator;
-import io.appium.java_client.remote.AndroidMobileCapabilityType;
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.remote.AutomationName;
+import io.appium.java_client.remote.IOSMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.*;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -24,37 +25,41 @@ import java.net.URL;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-import static java.time.Duration.ofSeconds;
-
 public class BasePage {
-    protected WebDriverWait wait;
-    protected MobileActions mobileActions;
-    public AppiumDriver driver;
+    public WebDriverWait wait;
+    public MobileActions mobileActions;
     public Properties prop;
+    public AppiumDriver driver;
+
 
 
     public static ThreadLocal<AppiumDriver> tdriver =  new ThreadLocal<AppiumDriver>();
+
     @Parameters({"device", "appiumServer","systemPort","platformVersion"})
     @BeforeMethod(alwaysRun = true)
 
-    public AppiumDriver initialize_driver(String device, String appiumServer, String systemPort,String platformVersion) throws MalformedURLException {
+    public AppiumDriver initialize_driver(String device, String appiumServer, String systemPort,String platformVersion)  {
         try {
 
-            DesiredCapabilities capabilities = new DesiredCapabilities();
-//            capabilities.setCapability(MobileCapabilityType.NO_RESET,"true");
-//            capabilities.setCapability(MobileCapabilityType.FULL_RESET,"false");
-            capabilities.setCapability(AndroidMobileCapabilityType.AUTO_GRANT_PERMISSIONS,"true");
-            capabilities.setCapability("platformVersion", platformVersion);
-            capabilities.setCapability("platformName", "Android");
-            capabilities.setCapability("automationName", "UiAutomator2");
-            capabilities.setCapability(AndroidMobileCapabilityType.SYSTEM_PORT,systemPort);
-            capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, device);
-            capabilities.setCapability(MobileCapabilityType.UDID, device);
-            capabilities.setCapability("appPackage", "com.ideomobile.discount");
-            capabilities.setCapability("appActivity", "com.discount.ui.DiscountSplashActivity");
+            DesiredCapabilities cap = new DesiredCapabilities();
+            cap.setCapability(IOSMobileCapabilityType.AUTO_ACCEPT_ALERTS,"true");
+            cap.setCapability(MobileCapabilityType.NO_RESET, "true");
+            cap.setCapability(MobileCapabilityType.FULL_RESET, "false");
+            cap.setCapability(MobileCapabilityType.PLATFORM_NAME, "IOS");
+            cap.setCapability(MobileCapabilityType.AUTOMATION_NAME, AutomationName.IOS_XCUI_TEST);
+            cap.setCapability(IOSMobileCapabilityType.AUTO_ACCEPT_ALERTS,"true");
+            cap.setCapability(IOSMobileCapabilityType.LOCATION_SERVICES_AUTHORIZED, "true");
+            cap.setCapability(MobileCapabilityType.PLATFORM_VERSION, platformVersion);
+            cap.setCapability(MobileCapabilityType.DEVICE_NAME, device);
+            cap.setCapability(MobileCapabilityType.UDID, device);
+            cap.setCapability("xcodeOrgId", "com.discountalex.WebDriverAgentRunner");
+            cap.setCapability("xcodeSigningId", "iPhone Developer");
+            cap.setCapability(IOSMobileCapabilityType.BUNDLE_ID, "ngsoft.il.co.discountbank.discountbank");
+            cap.setCapability(IOSMobileCapabilityType.USE_NEW_WDA, "true");
+            cap.setCapability(IOSMobileCapabilityType.WDA_LOCAL_PORT, systemPort);
             URL url = new URL(appiumServer);
-            driver = new AppiumDriver<MobileElement>(url, capabilities);
-            driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+            driver=new AppiumDriver<MobileElement>(url,cap);
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             Assert.assertNotNull(driver);
 
 
@@ -65,7 +70,7 @@ public class BasePage {
             exp.printStackTrace();
         }
         tdriver.set(driver);
-        return getDriver();
+        return  getDriver();
     }
 
 

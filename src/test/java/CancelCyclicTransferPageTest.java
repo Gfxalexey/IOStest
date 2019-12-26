@@ -13,18 +13,20 @@ public class CancelCyclicTransferPageTest extends BasePage {
         LoginPage loginPage = new LoginPage(driver);
         DashbordPage dashbordPage = new DashbordPage(driver);
         CancelCyclicTransferPage cancel = new CancelCyclicTransferPage(driver);
+        AllActionPage all=new AllActionPage(driver);
         loginPage.EnterButton.click();
-        Thread.sleep(1000);
+        Utils.TapCordinate(driver,85,448);
         loginPage.loginsucces(PropertyManager.getInstance().getCancelCyclicTransferPageTestId(), PropertyManager.getInstance().getCancelCyclicTransferPageTestPass(), PropertyManager.getInstance().getCancelCyclicTransferPageTestPass());
-        dashbordPage.TutorialSkip.click();
-        Utils.waitForbanner(driver, dashbordPage.Banner, 3);
+        Utils.wait_and_click_Element(driver,dashbordPage.Banner,5);
         dashbordPage.click_HamburgerButton();
         dashbordPage.allaction.click();
-        Utils.scrollToText("ביטול העברה עתידית",driver);
+//        all.cancelhokButton.click();
+        Utils.scrollScreenAll(driver,5,all.cancelhokButton);
+//        Utils.scrollToText("ביטול העברה עתידית",driver);
         cancel.standingOrderCancel.click();
         cancel.ContinueButton.click();
         Utils.waitForElement(driver,cancel.gagola,10);
-        cancel.ContinueButton.click();
+        cancel.AcceptContinueButton.click();
         Utils.waitForElement(driver,cancel.ScreenCaptureButton,2);
         cancel.ScreenCaptureButton.click();
 

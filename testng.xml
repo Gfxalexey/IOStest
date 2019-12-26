@@ -2,31 +2,34 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite" parallel="tests" thread-count="4">
 
-        <test name="xiaomi mix2 test">
-            <parameter name="device" value="192.168.0.100:5555"></parameter>
-        <parameter name="platformVersion" value="9"></parameter>
-            <parameter name="appiumServer" value="http://127.0.0.1:4721/wd/hub"></parameter>
-            <parameter name="systemPort" value="8201"></parameter>
+        <test name="IPHONE X test">
+            <parameter name="device" value="de2af9fe57fc3845e3a0d2436e67d14765053a81"></parameter>
+        <parameter name="platformVersion" value="12.4"></parameter>
+            <parameter name="appiumServer" value="http://127.0.0.1:4723/wd/hub"></parameter>
+            <parameter name="systemPort" value="8289"></parameter>
 
             <classes>
-                <class name="DidiPageTest"/>
+<!--                <class name="VIPFlyPageTest"/>-->
+<!--                <class name="GetLoanPageTest"/>-->
+                <class name="TransfersPageTest"/>
+<!--                <class name="WithdrawalOfDepositTest"/>-->
             </classes>
         </test>
-    <test name="samsung note9 Test">
-        <parameter name="device" value="192.168.0.101:5555"></parameter>
-        <parameter name="platformVersion" value="9"></parameter>
-        <parameter name="appiumServer" value="http://127.0.0.1:4729/wd/hub"></parameter>
-        <parameter name="systemPort" value="8203"></parameter>
+<!--    <test name="samsung note9 Test">-->
+<!--        <parameter name="device" value="192.168.0.101:5555"></parameter>-->
+<!--        <parameter name="platformVersion" value="9"></parameter>-->
+<!--        <parameter name="appiumServer" value="http://127.0.0.1:4729/wd/hub"></parameter>-->
+<!--        <parameter name="systemPort" value="8203"></parameter>-->
 <!--192.168.1.152:5555-->
 <!--        192.168.0.102:5555-->
-        <classes>
-            <class name="SettingsPageTest">
+<!--        <classes>-->
+<!--            <class name="SettingsPageTest">-->
 <!--            <methods>-->
 <!--                <include name="DIDI_v2" />-->
 <!--            </methods>-->
-            </class>
-        </classes>
-    </test>
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
     <!--    <test name="oneplus Test">-->
     <!--        <parameter name="device" value="192.168.0.103:5555"></parameter>-->
     <!--        <parameter name="appiumServer" value="http://127.0.0.1:4722/wd/hub"></parameter>-->

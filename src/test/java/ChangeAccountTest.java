@@ -27,11 +27,11 @@ import Utils.PropertyManager;
 public class ChangeAccountTest extends BasePage {
 
     @Test(priority = 1, description = "החלפת חשבון")
+    @Ignore
     public void Change_Account() throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);
         DashbordPage dashbordPage = new DashbordPage(driver);
         ChangeAccountPage changeAccountPage = new ChangeAccountPage(driver);
-//        Utils.wait_and_click_Element(driver,loginPage.AllowButton,2);
         loginPage.EnterButton.click();
         Thread.sleep(1000);
         loginPage.loginsucces(PropertyManager.getInstance().getChangeAccountTestId(), PropertyManager.getInstance().getChangeAccountTestPass(), PropertyManager.getInstance().getChangeAccountTestPass());
@@ -54,10 +54,23 @@ public class ChangeAccountTest extends BasePage {
             System.out.println("חשבון הוחלף הבצלחה");
         } else System.out.println("חשבון לא הוחלף");
     }
+
+    @Test(priority = 1, description = "החלפת חשבון")
+    public void Change_Account_IOS() throws InterruptedException {
+        LoginPage loginPage = new LoginPage(driver);
+        DashbordPage dashbordPage = new DashbordPage(driver);
+        ChangeAccountPage changeAccountPage = new ChangeAccountPage(driver);
+        loginPage.EnterButton.click();
+        Utils.TapCordinate(driver,85,448);
+        loginPage.loginsucces(PropertyManager.getInstance().getChangeAccountTestId(), PropertyManager.getInstance().getChangeAccountTestPass(), PropertyManager.getInstance().getChangeAccountTestPass());
+        Utils.wait_and_click_Element(driver,dashbordPage.Banner,2);
+        String Numnow = dashbordPage.accountNumber.getText();
+        dashbordPage.HamburgerButton.click();
+        dashbordPage.clickchooseAcoountButton();
+        Utils.TapCordinate(driver,125,348);
+        String Numnow2 = dashbordPage.accountNumber.getText();
+        if (Numnow != Numnow2) {
+            System.out.println("חשבון הוחלף הבצלחה");
+        } else System.out.println("חשבון לא הוחלף");
+    }
 }
-//
-//    @AfterMethod
-//    public void teardown () {
-//        driver.closeApp();
-//    }
-//}

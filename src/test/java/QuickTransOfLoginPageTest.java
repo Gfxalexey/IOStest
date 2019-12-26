@@ -44,7 +44,7 @@ public class QuickTransOfLoginPageTest extends BasePage {
         Utils.waitForElement(driver,loginPage.snapshot,10);
         loginPage.clickquicktransfer();
         loginPage.loginsuccesOnlyPass("1q1q1q");
-        transfersPage.typeName("shalom");
+        transfersPage.type_Name("shalom");
         driver.navigate().back();
         transfersPage.clickContinueButton();
         transfersPage.accountnum.sendKeys("532142");

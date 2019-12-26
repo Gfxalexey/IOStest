@@ -11,6 +11,8 @@ import Listeners.TestAllureListener;
 import java.net.MalformedURLException;
 import java.util.List;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
+
 import Utils.PropertyManager;
 @Listeners({TestAllureListener.class})
 public class GetLoanPageTest extends BasePage{
@@ -19,84 +21,67 @@ public class GetLoanPageTest extends BasePage{
         LoginPage loginPage = new LoginPage(driver);
         DashbordPage dashbordPage = new DashbordPage(driver);
         GetLoanPage getLoanPage=new GetLoanPage(driver);
-        Utils.wait_and_click_Element(driver,loginPage.AllowButton,3);
         loginPage.EnterButton.click();
-        Thread.sleep(1000);
+        Utils.TapCordinate(driver,85,448);
         loginPage.loginsucces(PropertyManager.getInstance().getGetLoanPageTestTestId(),PropertyManager.getInstance().getGetLoanPageTestPass(),PropertyManager.getInstance().getGetLoanPageTestPass());
-        dashbordPage.TutorialSkip.click();
-        if(driver.findElements(By.id("com.ideomobile.discount:id/bannerImageImageView")).size()>0){
-            driver.navigate().back();
-        }
+        Utils.wait_and_click_Element(driver,dashbordPage.Banner,2);
         dashbordPage.HamburgerButton.click();
         dashbordPage.clickgetLoanButton();
         getLoanPage.loanContinueButton1.click();
+        Utils.TapCordinate(driver,117,391);
         getLoanPage.type_Amount("1000");
         getLoanPage.loanNextBoard.click();
+        Utils.waitForElement(driver,getLoanPage.loanContinueButton,10);
         getLoanPage.loanContinueButton.click();
         Utils.waitForElement(driver,getLoanPage.loanContinueButton,10);
         getLoanPage.loanContinueButton.click();
         Utils.waitForElement(driver,getLoanPage.confirmation_amount,10);
-        getLoanPage.loanContinueButton.click();
+        getLoanPage.AcceptContinueButton.click();
         getLoanPage.loanScreenCaptureButton.click();
     }
     @Test(priority = 1,description = "לקיחת הלוואה עם סכום שגוי וקבלת הודעה תקינה")
     public void Get_new_loan_invalid_amount() throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);
         DashbordPage dashbordPage = new DashbordPage(driver);
-        GetLoanPage getLoanPage = new GetLoanPage(driver);
-        Utils.wait_and_click_Element(driver,loginPage.AllowButton,3);
-
+        GetLoanPage getLoanPage=new GetLoanPage(driver);
         loginPage.EnterButton.click();
-        Thread.sleep(1000);
-        loginPage.loginsucces("320555683","1q1q1q","1q1q1q");
-        dashbordPage.TutorialSkip.click();
-        if(driver.findElements(By.id("com.ideomobile.discount:id/bannerImageImageView\n")).size()>0){
-            driver.navigate().back();
-        }
+        Utils.TapCordinate(driver,85,448);
+        loginPage.loginsucces(PropertyManager.getInstance().getGetLoanPageTestTestId(),PropertyManager.getInstance().getGetLoanPageTestPass(),PropertyManager.getInstance().getGetLoanPageTestPass());
+        Utils.wait_and_click_Element(driver,dashbordPage.Banner,2);
         dashbordPage.HamburgerButton.click();
         dashbordPage.clickgetLoanButton();
         getLoanPage.loanContinueButton1.click();
-        getLoanPage.type_Amount("100");
+        Utils.TapCordinate(driver,117,391);
+        getLoanPage.type_Amount("50");
         getLoanPage.loanNextBoard.click();
         String  mishpat = getLoanPage.loanErrorAmountText.getText();
-        Assert.assertEquals("סכום ההלוואה המינימלי הינו 1,000.00 ש\"ח", mishpat);
+        Assert.assertEquals("סכום ההלוואה המינימלי הינו ₪1,000.00", mishpat);
 
     }
-    @Test(priority = 2,description = "הצגת לוח סחלוקן")
+    @Test(priority = 2,description = "הצגת לוח סילוקן")
     public void DisposalBoard() throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);
         DashbordPage dashbordPage = new DashbordPage(driver);
         LoansPage loansPage =new LoansPage(driver);
-        Utils.wait_and_click_Element(driver,loginPage.AllowButton,3);
         loginPage.EnterButton.click();
-        Thread.sleep(1000);
-        loginPage.loginsucces("320555683", "1q1q1q", "1q1q1q");
-        dashbordPage.TutorialSkip.click();
-        if(driver.findElements(By.id("com.ideomobile.discount:id/bannerImageImageView\n")).size()>0){
-            driver.navigate().back();
-        }
-        dashbordPage.clickdashLoanMenu();
+        Utils.TapCordinate(driver,85,448);
+        loginPage.loginsucces(PropertyManager.getInstance().getGetLoanPageTestTestId(),PropertyManager.getInstance().getGetLoanPageTestPass(),PropertyManager.getInstance().getGetLoanPageTestPass());
+        Utils.wait_and_click_Element(driver,dashbordPage.Banner,5);
         dashbordPage.clickdashLoanMenu();
         loansPage.clicknameLoan();
-        Utils.scrollScreen(driver);
         loansPage.clickloanDetailsBoardButton();
-        Thread.sleep(2000);
-
+        Utils.waitForElement(driver,loansPage.CaptureButton,5);
+        loansPage.CaptureButton.click();
     }
     @Test(priority = 3,description = "הצגת פרטי ההלוואה")
     public void  LoanDetails() throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);
         DashbordPage dashbordPage = new DashbordPage(driver);
-        LoansPage loansPage = new LoansPage(driver);
-        Utils.wait_and_click_Element(driver,loginPage.AllowButton,3);
+        LoansPage loansPage =new LoansPage(driver);
         loginPage.EnterButton.click();
-        Thread.sleep(1000);
-        loginPage.loginsucces("320555683", "1q1q1q", "1q1q1q");
-        dashbordPage.TutorialSkip.click();
-        if(driver.findElements(By.id("com.ideomobile.discount:id/bannerImageImageView\n")).size()>0){
-            driver.navigate().back();
-        }
-        dashbordPage.clickdashLoanMenu();
+        Utils.TapCordinate(driver,85,448);
+        loginPage.loginsucces(PropertyManager.getInstance().getGetLoanPageTestTestId(),PropertyManager.getInstance().getGetLoanPageTestPass(),PropertyManager.getInstance().getGetLoanPageTestPass());
+        Utils.wait_and_click_Element(driver,dashbordPage.Banner,5);
         dashbordPage.clickdashLoanMenu();
         loansPage.clicknameLoan();
         Thread.sleep(2000);

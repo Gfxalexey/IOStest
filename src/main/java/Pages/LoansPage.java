@@ -5,6 +5,7 @@ import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -24,16 +25,28 @@ public class LoansPage {
     public WebElement plusButton;
 
     @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"הלואה לא צמודה ברבית קבועה \")")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeApplication[@name=\"בנק דיסקונט\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther[2]\n")
+//    @iOSXCUITFindBy(iOSNsPredicate= "type == 'XCUIElementTypeButton' AND name BEGINSWITH 'הלואה לא צמודה ברבית קבועה ' AND enabled == 1")
     public WebElement nameLoan;
+
     @AndroidFindBy(id = "com.ideomobile.discount:id/getLoanAmountTextButton")
+
     public WebElement getPlusButton;
+
     @AndroidFindBy(id = "com.ideomobile.discount:id/LoanDetailsBoardButton")
+    @iOSXCUITFindBy(iOSNsPredicate = "type == 'XCUIElementTypeButton' AND name  BEGINSWITH 'לוח סילוקין'")
     public WebElement loanDetailsBoardButton;
+
     @AndroidFindBy(id = "com.ideomobile.discount:id/x_button")
+
     public WebElement xButton;
+
     @AndroidFindBy(id = "com.ideomobile.discount:id/infoButton")
+
     public WebElement infoButton;
 
+    @iOSXCUITFindBy(iOSNsPredicate = "type =='XCUIElementTypeButton' AND name BEGINSWITH 'שמירה כתמונה'")
+    public WebElement CaptureButton;
 
    @Step("לחיצה על על הלוואה פרטנית")
         public LoansPage clicknameLoan() {

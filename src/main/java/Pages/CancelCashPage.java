@@ -5,6 +5,7 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidBy;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -17,12 +18,19 @@ public class CancelCashPage {
 
     }
     @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"ביטול הזמנה\")")
+    @iOSXCUITFindBy(iOSNsPredicate = "type =='XCUIElementTypeButton' AND name BEGINSWITH 'ביטול הזמנה'")
     public WebElement CancelButton;
+
     @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"עדכון הזמנה\")")
+    @iOSXCUITFindBy(iOSNsPredicate = "type =='XCUIElementTypeButton' AND name BEGINSWITH 'עדכון הזמנה'")
     public WebElement UpdateButton;
+
     @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"ביטול\")")
+    @iOSXCUITFindBy(iOSNsPredicate = "type =='XCUIElementTypeButton' AND name BEGINSWITH 'ביטול'")
     public WebElement CancelButton2;
+
     @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"אישור\")")
+    @iOSXCUITFindBy(iOSNsPredicate = "type =='XCUIElementTypeButton' AND name BEGINSWITH 'אישור'")
     public WebElement AcceptButton;
 
 

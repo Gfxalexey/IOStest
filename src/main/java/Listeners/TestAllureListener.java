@@ -3,6 +3,7 @@ package Listeners;
 import Pages.BasePage;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.ios.IOSDriver;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -41,7 +42,7 @@ public class TestAllureListener implements ITestListener {
     @Override
     public void onStart(ITestContext iTestContext) {
         System.out.println("I am in onStart method " + iTestContext.getName());
-        iTestContext.setAttribute("AppiumDriver", BasePage.getDriver());
+        iTestContext.setAttribute("IOSDriver", BasePage.getDriver());
     }
 
     @Override
@@ -58,7 +59,7 @@ public class TestAllureListener implements ITestListener {
     public void onTestSuccess(ITestResult iTestResult) {
         System.out.println("I am in onTestSuccess method " + getTestMethodName(iTestResult) + " succeed");
         Object testClass = iTestResult.getInstance();
-        AppiumDriver driver = BasePage.getDriver();
+        AppiumDriver driver =  BasePage.getDriver();
         // Allure ScreenShotRobot and SaveTestLog
         if (driver instanceof AppiumDriver) {
             System.out.println("Screenshot captured for test case:" + getTestMethodName(iTestResult));
@@ -73,7 +74,7 @@ public class TestAllureListener implements ITestListener {
     public void onTestFailure(ITestResult iTestResult) {
         System.out.println("I am in onTestFailure method " + getTestMethodName(iTestResult) + " failed");
         Object testClass = iTestResult.getInstance();
-        AppiumDriver driver = BasePage.getDriver();
+        AppiumDriver driver =  BasePage.getDriver();
         // Allure ScreenShotRobot and SaveTestLog
         if (driver instanceof AppiumDriver) {
             System.out.println("Screenshot captured for test case:" + getTestMethodName(iTestResult));

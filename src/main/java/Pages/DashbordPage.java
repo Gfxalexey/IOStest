@@ -3,10 +3,7 @@ package Pages;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.pagefactory.AndroidBy;
-import io.appium.java_client.pagefactory.AndroidFindBy;
-import io.appium.java_client.pagefactory.AndroidFindBys;
-import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import io.appium.java_client.pagefactory.*;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import io.appium.java_client.MobileElement;
@@ -21,21 +18,33 @@ public class DashbordPage {
 
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@content-desc=\"מצב החשבון שלי חשבון מספר \"]\n")
+    @iOSXCUITFindBy(accessibility = "כניסה לחשבונך")
     public MobileElement TitelText;
+
     @AndroidFindBy(id = "com.ideomobile.discount:id/TutorialSkip")
+    @iOSXCUITFindBy(accessibility = "סגירה")
     public MobileElement TutorialSkip;
+
     @AndroidFindBy(xpath = "//android.widget.TextView[@content-desc=\"עובר ושב\"]\n")
     public MobileElement OshText;
+
+
     @AndroidFindBy(xpath = "//android.widget.ImageButton[@content-desc=\"תפריט\"]\n")
     public MobileElement HamburgerButton2;
+
     @AndroidFindBy(id = "com.ideomobile.discount:id/MenuButton")
+    @iOSXCUITFindBy(accessibility = "פתיחת תפריט")
     public MobileElement HamburgerButton;
+
     @AndroidFindBy(xpath = "//android.widget.TextView[@content-desc=\"כרטיס אשראי\"]\n")
     public MobileElement CreditCardsText;
+
     @AndroidFindBy(xpath = "//android.widget.TextView[@content-desc=\"ניירות ערך\"]\n")
     public MobileElement SecuritiesText;
+
     @AndroidFindBy(xpath = "//android.widget.TextView[@content-desc=\"הלוואות\"]\n")
     public MobileElement LoansText;
+
     @AndroidFindBy(xpath = "//android.widget.TextView[@content-desc=\"פקדונות וחסכונות\"]\n")
     public MobileElement DepositsText;
     @AndroidFindBy(xpath = "//android.widget.TextView[@content-desc=\"מטבע חוץ\"]\n")
@@ -43,20 +52,30 @@ public class DashbordPage {
     @AndroidFindBy(xpath = "//android.widget.TextView[@content-desc=\"משכנתאות\"]\n")
     public MobileElement MortageText;
     @AndroidFindBy(xpath = "//android.widget.ImageButton[@content-desc=\"דואר דיסקונט\"]\n")
+    @iOSXCUITFindBy(iOSNsPredicate = "type == 'XCUIElementTypeButton' AND name  BEGINSWITH 'הודעות דיסקונט'")
     public MobileElement PostButton;
+
     @AndroidFindBy(xpath = "//android.widget.ImageButton[@content-desc=\"דף הבית\"]\n")
     public MobileElement HomeButton;
+
     @AndroidFindBy(id = "com.ideomobile.discount:id/newMainMenu_chooseAccountArrow")
+    @iOSXCUITFindBy(iOSNsPredicate = "type == 'XCUIElementTypeButton' AND name  BEGINSWITH 'החלפת חשבון'")
     public MobileElement chooseAcoountButton;
+
     @AndroidFindBy(id = "com.ideomobile.discount:id/newMainMenu_accountNumber")
+    @iOSXCUITFindBy(iOSNsPredicate = "type == 'XCUIElementTypeOther' AND name  BEGINSWITH 'מצב החשבון שלי'")
     public MobileElement accountNumber;
+
     @AndroidFindBy(id = "com.ideomobile.discount:id/menuButtonToAll")
+    @iOSXCUITFindBy(iOSNsPredicate = "type =='XCUIElementTypeButton' AND name BEGINSWITH 'כל הפעולות'")
     public MobileElement allaction;
+
     @AndroidFindBy(id = "com.ideomobile.discount:id/error_negative_button")
     public MobileElement negative_button;
     @AndroidFindBy(id = "com.ideomobile.discount:id/newMainMenu_MyProfile_layout")
     public MobileElement MyProfile_button;
     @AndroidFindBy(id = "com.ideomobile.discount:id/bannerImageImageView")
+    @iOSXCUITFindBy(accessibility = "סגירה")
     public MobileElement Banner;
 //    @AndroidFindBy(id = "com.ideomobile.discount:id/bannerImageMainButtonX")
 //    public MobileElement Banner_X_Button;
@@ -72,27 +91,49 @@ public class DashbordPage {
 
     //-------------------------------------------------------------------------------------------------------------------------------------
     @AndroidFindBy(uiAutomator = "new UiSelector().text(\"הפקדה לפיקדון\")")
+    @iOSXCUITFindBy(iOSNsPredicate = "type =='XCUIElementTypeButton' AND name BEGINSWITH 'הפקדה לפיקדון'")
     public MobileElement openDepositButton;
+
     @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"יתרת עו\"ש\")")
     public MobileElement balanceOfAccount;
+
     @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"העברה בין חשבונות\")")
+//    @iOSXCUITFindBy(accessibility = " העברה בין חשבונות")
+    @iOSXCUITFindBy(iOSNsPredicate = "type == 'XCUIElementTypeButton' AND name  BEGINSWITH 'העברה בין חשבונות'")
     public MobileElement transferButton;
+
     @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"בקשת הלוואה\")")
+    @iOSXCUITFindBy(iOSNsPredicate = "type =='XCUIElementTypeButton' AND name BEGINSWITH 'בקשת הלוואה'")
     public MobileElement LoanButton;
+
     @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"העברה לאיש קשר\")")
+    @iOSXCUITFindBy(iOSNsPredicate = "type =='XCUIElementTypeButton' AND name BEGINSWITH 'העברה לאיש קשר'")
     public MobileElement transferFriendCashButton;
+
     @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"משיכת מזומן ללא כרטיס\")")
+    @iOSXCUITFindBy(iOSNsPredicate = "type =='XCUIElementTypeButton' AND name BEGINSWITH 'משיכת מזומן ללא כרטיס'")
     public MobileElement cashWithdrawalButton;
+
     @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"המרת מט\"ח\")")
+    @iOSXCUITFindBy(iOSNsPredicate = "type =='XCUIElementTypeButton' AND name BEGINSWITH 'המרת מטֿ/״ח'")
     public MobileElement foreignConversionsButton;
+
     @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"עובר ושב\")")
+    @iOSXCUITFindBy(iOSNsPredicate = "type =='XCUIElementTypeButton' AND name BEGINSWITH 'עובר ושב'")
     public MobileElement oshLobbyButton;
+
     @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"כרטיסי אשראי\")")
+    @iOSXCUITFindBy(iOSNsPredicate = "type =='XCUIElementTypeButton' AND name BEGINSWITH 'כרטיסי אשראי'")
     public MobileElement creditCardButton;
+
     @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"שוק ההון\")")
+    @iOSXCUITFindBy(iOSNsPredicate = "type =='XCUIElementTypeButton' AND name BEGINSWITH 'שוק ההון'")
     public MobileElement capitalMarketButton;
+
     @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"הלוואות\")")
+    @iOSXCUITFindBy(iOSNsPredicate = "type =='XCUIElementTypeButton' AND name BEGINSWITH 'הלוואות'")
     public MobileElement loansButton;
+
     @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"התכתבות עם בנקאי\")")
     public MobileElement massageToBankerButton;
     @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"דִידִי – הנציגה הדיגיטלית\")")
@@ -101,10 +142,20 @@ public class DashbordPage {
     public MobileElement meetingBankerButton;
     @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"מייל לבנקאי\")")
     public MobileElement mailToBankerButton;
+
     @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"הלוואות\")")
+    @iOSXCUITFindBy(iOSNsPredicate = "type == 'XCUIElementTypeButton' AND name  BEGINSWITH 'הלוואות'")
     public MobileElement dashLoanMenu;
+
     @AndroidFindBy(uiAutomator = "new UiSelector().text(\"תיק ניירות ערך\")")
     public MobileElement TradeLobby;
+
+    @iOSXCUITFindBy(iOSNsPredicate = "type == 'XCUIElementTypeButton' AND name  BEGINSWITH 'אודות ואבטחת מידע'")
+    public  MobileElement about_Us_security;
+
+//    @iOSXCUITFindBy(xpath = "//XCUIElementTypeApplication[@name=\"בנק דיסקונט\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[9]\n")
+    @iOSXCUITFindBy(iOSNsPredicate = "type == 'XCUIElementTypeButton' AND name  CONTAINS 'VIP'")
+    public  MobileElement VIP;
 
 
 

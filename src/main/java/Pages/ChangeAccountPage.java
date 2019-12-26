@@ -3,6 +3,7 @@ package Pages;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -16,7 +17,10 @@ public class ChangeAccountPage {
 
     @AndroidFindBy(id = "com.ideomobile.discount:id/ExitButton")
     public WebElement exitButton;
+
     @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"שלום שלום שלום שלום שלום שלום שלום\")")
+    @iOSXCUITFindBy(iOSNsPredicate = "type == 'XCUIElementTypeStaticText' AND value  BEGINSWITH '1990669'")
+
     public WebElement newAccount;
 
 

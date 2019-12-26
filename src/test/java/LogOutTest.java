@@ -8,7 +8,7 @@ import Pages.BasePage;
         import io.appium.java_client.AppiumDriver;
         import io.appium.java_client.MobileBy;
         import io.appium.java_client.MobileElement;
-        import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidDriver;
         import io.appium.java_client.remote.AutomationName;
         import io.appium.java_client.remote.MobileCapabilityType;
         import org.openqa.selenium.By;
@@ -21,7 +21,7 @@ import java.net.MalformedURLException;
         import java.util.List;
         import java.util.Properties;
         import Listeners.TestAllureListener;
-
+        import Utils.PropertyManager;
 @Listeners({TestAllureListener.class})
 
 public class LogOutTest extends BasePage  {
@@ -30,18 +30,12 @@ public class LogOutTest extends BasePage  {
     public void Loguot_Test() throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);
         DashbordPage dashbordPage = new DashbordPage(driver);
-        Utils.wait_and_click_Element(driver,loginPage.AllowButton,3);
         loginPage.EnterButton.click();
-        Thread.sleep(1000);
-        loginPage.loginsucces("4806006","1q1q1q","1q1q1q");
-        dashbordPage.TutorialSkip.click();
-        if(driver.findElements(By.id("com.ideomobile.discount:id/bannerImageMainButtonX")).size()>0){
-            driver.navigate().back();
-        }
-        dashbordPage.HamburgerButton.click();
-        Thread.sleep(2000);
-        Utils.scrollToText("יציאה",driver);
-        Thread.sleep(3000);
+        loginPage.loginsuccesOnlyPass(PropertyManager.getInstance().getCancelCyclicTransferPageTestPass());
+        loginPage.EnterButton.click();
+        Utils.wait_and_click_Element(driver,dashbordPage.Banner,1);
+        dashbordPage.click_HamburgerButton();
+        Utils.scrollToTextIOS("יציאה",driver);
     }
 
 }

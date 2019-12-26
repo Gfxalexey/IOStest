@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="com.discountbankappium" />
+        <module name="appium_project" />
       </profile>
     </annotationProcessing>
   </component>

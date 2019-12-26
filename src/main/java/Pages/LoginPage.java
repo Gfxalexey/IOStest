@@ -2,9 +2,15 @@ package Pages;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.pagefactory.AndroidBy;
-import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import io.appium.java_client.pagefactory.iOSXCUITFindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import static java.time.Duration.ofSeconds;
+import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import io.qameta.allure.Step;
 import io.appium.java_client.MobileElement;
 import org.openqa.selenium.support.PageFactory;
@@ -18,45 +24,48 @@ public class LoginPage {
         PageFactory.initElements(new AppiumFieldDecorator(driver, ofSeconds(10)), this);
     }
 
-    @AndroidFindBy(xpath = "//android.widget.Button[@content-desc=\"כניסה\"]\n")
+    @iOSXCUITFindBy(accessibility = "כניסה לחשבונך")
     public MobileElement EnterButton;
 
-    @AndroidFindBy(xpath = "//android.widget.LinearLayout[@content-desc=\"תעודת זהות\"]/android.widget.LinearLayout/android.widget.EditText\n")
+    @iOSXCUITFindBy(iOSNsPredicate = "type == 'XCUIElementTypeTextField' AND name  BEGINSWITH 'תעודת זהות'")
     public MobileElement typeID;
 
-    @AndroidFindBy(xpath = "//android.widget.LinearLayout[@content-desc=\"סיסמה\"]/android.widget.LinearLayout/android.widget.EditText\n")
+    @iOSXCUITFindBy(iOSNsPredicate = "type == 'XCUIElementTypeSecureTextField' AND name  BEGINSWITH 'סיסמה'")
     public MobileElement typePAS;
 
-    @AndroidFindBy(xpath = "//android.widget.LinearLayout[@content-desc=\"קוד מזהה\"]/android.widget.LinearLayout/android.widget.EditText\n")
+//    @iOSXCUITFindBy(accessibility  = "סיסמה")
+    @iOSXCUITFindBy(iOSNsPredicate = "type == 'XCUIElementTypeTextField' AND name  BEGINSWITH 'קוד מזהה'")
     public MobileElement typeCODE;
-    @AndroidFindBy(xpath = "//android.widget.RelativeLayout[@content-desc=\"כניסה לאפליקציית דיסקונט\"]/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.Button[2]\n")
+
+
+    @iOSXCUITFindBy(xpath = "//android.widget.RelativeLayout[@content-desc=\"כניסה לאפליקציית דיסקונט\"]/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.Button[2]\n")
     public MobileElement ForgotPassButton;
 
-    @AndroidFindBy(xpath = "//android.widget.RelativeLayout[@content-desc=\"כניסה לאפליקציית דיסקונט\"]/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.Button[1]\n")
+    @iOSXCUITFindBy(xpath = "//android.widget.RelativeLayout[@content-desc=\"כניסה לאפליקציית דיסקונט\"]/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.Button[1]\n")
     public MobileElement ForgotCodeButton;
-    @AndroidFindBy(id = "com.android.packageinstaller:id/permission_allow_button")
+    @iOSXCUITFindBy(id = "com.android.packageinstaller:id/permission_allow_button")
     public MobileElement AllowButton;
-    @AndroidFindBy(id = "com.ideomobile.discount:id/BotWalkMeClose")
+    @iOSXCUITFindBy(id = "com.ideomobile.discount:id/BotWalkMeClose")
     public MobileElement Close_didiTutorial;
 
 
-    @AndroidFindBy(id = "com.ideomobile.discount:id/login_snapshot_icon")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeApplication[@name=\"בנק דיסקונט\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[3]/XCUIElementTypeOther/XCUIElementTypeOther[2]\n")
     public  MobileElement arrowsnapshot;
-    @AndroidFindBy(id = "com.ideomobile.discount:id/LoginClosedSnapshotTitleTextView")
+    @iOSXCUITFindBy(id = "com.ideomobile.discount:id/LoginClosedSnapshotTitleTextView")
     public  MobileElement snapshot;
-    @AndroidFindBy(id = "com.ideomobile.discount:id/loginScreen_quickActions_transferLayout")
+    @iOSXCUITFindBy(id = "com.ideomobile.discount:id/loginScreen_quickActions_transferLayout")
     public  MobileElement quicktransfer;
-    @AndroidFindBy(id = "com.ideomobile.discount:id/loginScreen_quickActions_withdrawalLayout")
+    @iOSXCUITFindBy(id = "com.ideomobile.discount:id/loginScreen_quickActions_withdrawalLayout")
     public  MobileElement  quickwithdrawal;
-    @AndroidFindBy(id = "com.ideomobile.discount:id/loginScreen_quickActions_checkDepositLayout")
+    @iOSXCUITFindBy(id = "com.ideomobile.discount:id/loginScreen_quickActions_checkDepositLayout")
     public  MobileElement quickcheckDeposit;
-    @AndroidFindBy(id = "com.ideomobile.discount:id/loginScreen_quickActions_loanRequestLayout")
+    @iOSXCUITFindBy(id = "com.ideomobile.discount:id/loginScreen_quickActions_loanRequestLayout")
     public  MobileElement  quickloan;
-    @AndroidFindBy(id = "com.ideomobile.discount:id/snapshotLayout_quickLook_ButtonLayout")
+    @iOSXCUITFindBy(id = "com.ideomobile.discount:id/snapshotLayout_quickLook_ButtonLayout")
     public  MobileElement  login_snapshot_button;
-    @AndroidFindBy(id = "com.ideomobile.discount:id/snapshotOshAmountText")
+    @iOSXCUITFindBy(id = "com.ideomobile.discount:id/snapshotOshAmountText")
     public  MobileElement  snapshotOshAmount;
-    @AndroidFindBy(id = "com.ideomobile.discount:id/HelloUser")
+    @iOSXCUITFindBy(id = "com.ideomobile.discount:id/HelloUser")
     public  MobileElement  HelloUser;
 
 @Step("לחיצה על העברות מדף לוגין")

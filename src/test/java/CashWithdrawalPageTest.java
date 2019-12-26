@@ -13,23 +13,16 @@ public class CashWithdrawalPageTest extends BasePage {
         DashbordPage dashbordPage = new DashbordPage(driver);
         CashWithdrawalPage cashWithdrawalPage = new CashWithdrawalPage(driver);
         loginPage.EnterButton.click();
-        Thread.sleep(1000);
-        loginPage.loginsucces(PropertyManager.getInstance().getCashWithdrawalPageTestId(), PropertyManager.getInstance().getCashWithdrawalPageTestPass(), PropertyManager.getInstance().getCashWithdrawalPageTestPass());
-        dashbordPage.TutorialSkip.click();
+        loginPage.loginsuccesOnlyPass( PropertyManager.getInstance().getCashWithdrawalPageTestPass());
         Utils.waitForbanner(driver,dashbordPage.Banner,3);
-
-//        if (driver.findElements(By.id("com.ideomobile.discount:id/bannerImageImageView")).size() > 0) {
-//            driver.navigate().back();
-//        }
         dashbordPage.click_HamburgerButton();
         dashbordPage.cashWithdrawalButton.click();
         Utils.waitForElement(driver, cashWithdrawalPage.ContinueButton, 10);
-        cashWithdrawalPage.ContinueButton.click();
-        cashWithdrawalPage.ContinueButton.click();
-        Utils.waitForElement(driver, cashWithdrawalPage.ContinueButton, 10);
-        cashWithdrawalPage.ContinueButton.click();
+        cashWithdrawalPage.click_ContinueButton();
+        cashWithdrawalPage.click_ContinueButton();
+        Utils.waitForElement(driver, cashWithdrawalPage.ApprovalButton, 10);
+        cashWithdrawalPage.click_ApprovalButton();
         cashWithdrawalPage.ScreenCaptureButton.click();
-        //    cashWithdrawalPage.AllowButton.click();
 
     }
 
@@ -38,21 +31,14 @@ public class CashWithdrawalPageTest extends BasePage {
         LoginPage loginPage = new LoginPage(driver);
         DashbordPage dashbordPage = new DashbordPage(driver);
         CancelCashPage cancelCashPage = new CancelCashPage(driver);
-        Utils.wait_and_click_Element(driver,loginPage.AllowButton,3);
         loginPage.EnterButton.click();
-        Thread.sleep(1000);
-        loginPage.loginsucces(PropertyManager.getInstance().getCashWithdrawalPageTestId(), PropertyManager.getInstance().getCashWithdrawalPageTestPass(), PropertyManager.getInstance().getCashWithdrawalPageTestPass());
-
-//        loginPage.loginsucces("320555683", "1q1q1q", "1q1q1q");
-        dashbordPage.TutorialSkip.click();
+        loginPage.loginsuccesOnlyPass(PropertyManager.getInstance().getCashWithdrawalPageTestPass());
         Utils.waitForbanner(driver,dashbordPage.Banner,3);
-//        if (driver.findElements(By.id("com.ideomobile.discount:id/bannerImageImageView\n")).size() > 0) {
-//            driver.navigate().back();
-//        }
         dashbordPage.click_HamburgerButton();
         dashbordPage.cashWithdrawalButton.click();
         cancelCashPage.click_CancelButton();
         cancelCashPage.click_AcceptButton();
+        Thread.sleep(2000);
     }
 }
 //        @AfterMethod

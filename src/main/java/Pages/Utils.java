@@ -2,13 +2,18 @@ package Pages;
 
 import io.appium.java_client.*;
 import io.appium.java_client.android.AndroidTouchAction;
+import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.touch.offset.ElementOption;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.touch.TouchActions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static io.appium.java_client.touch.WaitOptions.waitOptions;
 import static io.appium.java_client.touch.offset.PointOption.point;
@@ -16,8 +21,26 @@ import static java.time.Duration.ofSeconds;
 
 public class Utils {
     private static boolean isElementPresent;
-    AppiumDriver<MobileElement> driver;
+    public static AppiumDriver<MobileElement> driver;
 
+
+    public static void scrollToTextIOS2019(String text, AppiumDriver<MobileElement> driver,MobileElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        HashMap scrollObject = new HashMap<>();
+        scrollObject.put("predicateString", "value == '" + text + "'");
+        scrollObject.put("direction", "down");
+        js.executeScript("mobile: scroll", scrollObject);
+
+        element.click();
+    }
+    public static void scrollToTextIOS(String text, AppiumDriver<MobileElement> driver) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        HashMap scrollObject = new HashMap<>();
+        scrollObject.put("predicateString", "value == '" + text + "'");
+        scrollObject.put("direction", "down");
+        js.executeScript("mobile: scroll", scrollObject);
+
+    }
 
 
     public static void scrollToText(String text, AppiumDriver<MobileElement> driver) throws InterruptedException {
@@ -51,6 +74,32 @@ public class Utils {
 
 
     }
+    public static void scrollScreenAll (AppiumDriver<MobileElement> driver,int howManySwipes,WebElement element) {
+        Dimension dim = driver.manage().window().getSize();
+        Double screenHeightStart = dim.getHeight() * 0.5;
+        int scrollStart = screenHeightStart.intValue();
+        Double screenHeightEnd = dim.getHeight() * 0.2;
+        int scrollEnd = screenHeightEnd.intValue();
+
+        for (int i = 1; i <= howManySwipes; i++){
+            new TouchAction((PerformsTouchActions) driver)
+                    .press(point(0, scrollStart))
+                    .waitAction(waitOptions(ofSeconds(2)))
+                    .moveTo(point(0, scrollEnd))
+                    .release().perform();
+
+            boolean isElementPresent = element.isDisplayed();
+            if (isElementPresent){
+                element.click();
+                break;
+            }else System.out.println("element is not found");
+
+        }
+
+
+
+    }
+
 
 
     public static void swipeDown(int howManySwipes, AppiumDriver<MobileElement> driver, String text, int index) throws InterruptedException {
@@ -178,7 +227,7 @@ public class Utils {
             System.out.println(e.getMessage());
         }
     }
-        public static void wait_and_click_Element(AppiumDriver<MobileElement> driver, WebElement element, int seconds) throws InterruptedException {
+        public static void wait_and_click_Element(AppiumDriver<MobileElement> driver, WebElement element, int seconds)  {
 
             try {
                 Thread.sleep(3000);
@@ -209,7 +258,21 @@ public static void DragElement(WebElement element,WebElement ToElement, AppiumDr
             .moveTo(ElementOption.element(ToElement)).release().perform();
 }
 
+
+public static void TapCordinate(AppiumDriver<MobileElement> driver, int x, int y) {
+    Map<String, Object> args = new HashMap<>();
+    args.put("x", x);
+    args.put("y", y);
+    driver.executeScript("mobile: tap", args);
 }
+
+
+    }
+
+
+
+
+
 
 
 

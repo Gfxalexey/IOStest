@@ -1,5 +1,6 @@
 import Pages.*;
 import Utils.PropertyManager;
+import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import Listeners.TestAllureListener;
@@ -14,16 +15,19 @@ import Listeners.TestAllureListener;
         DashbordPage dashbordPage = new DashbordPage(driver);
         VIPFlyPage vip = new VIPFlyPage(driver);
         loginPage.EnterButton.click();
-        Thread.sleep(1000);
+        Utils.TapCordinate(driver,85,448);
         loginPage.loginsucces(PropertyManager.getInstance().getVIPFlyPageTestId(), PropertyManager.getInstance().getVIPFlyPageTestPass(), PropertyManager.getInstance().getVIPFlyPageTestPass());
-        dashbordPage.TutorialSkip.click();
+        loginPage.EnterButton.click();
         Utils.waitForbanner(driver, dashbordPage.Banner, 3);
         dashbordPage.click_HamburgerButton();
-        Utils.scrollToText("מפתח VIP נתב",driver);
-        System.out.println(vip.Text1.getText());
+
+        Utils.scrollToTextIOS("חדש: מפתח VIP נתב/״ג",driver);
+        dashbordPage.VIP.click();
         vip.click_join_vip();
         vip.click_ContinueButton();
         System.out.println(vip.firstSubTitle.getText());
+//        Assert.assertEquals("החודש אין לך זככים לך בחודש הבאאות, אבל הזמן טס... מח",vip.firstSubTitle.getText());
+        Assert.assertEquals("איך זה עובד?",vip.actionLink.getText());
 
 
     }
