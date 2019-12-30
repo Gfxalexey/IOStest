@@ -14,36 +14,24 @@ import Utils.PropertyManager;
 @Listeners({TestAllureListener.class})
 
 public class CheckBookOrderPageTest  extends  BasePage {
+
     @Test(description = "הזמנת_פנקסי_שיקים")
     public void Order_Checkbook() throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);
         DashbordPage dashbordPage = new DashbordPage(driver);
         CheckBookOrderPage checks = new CheckBookOrderPage(driver);
         AllActionPage all = new AllActionPage(driver);
-//        Utils.wait_and_click_Element(driver,loginPage.AllowButton,3);
         loginPage.EnterButton.click();
-        Thread.sleep(1000);
+        loginPage.click_changeUser();
         loginPage.loginsucces(PropertyManager.getInstance().getCheckBookOrderPageTestId(), PropertyManager.getInstance().getCheckBookOrderPageTestPass(), PropertyManager.getInstance().getCheckBookOrderPageTestPass());
-        dashbordPage.TutorialSkip.click();
         Utils.waitForbanner(driver,dashbordPage.Banner,3);
-
-//        if (driver.findElements(By.id("com.ideomobile.discount:id/bannerImageImageView")).size() > 0) {
-//            driver.navigate().back();
-//        }
         dashbordPage.HamburgerButton.click();
         dashbordPage.clickallaction();
-        Utils.scrollToText("הזמנת פנקסי שיקים",driver);
-//        Utils.scrollScreen(driver);
-//        all.orderChecksBook.click();
-        Thread.sleep(1000);
-        Utils.waitForElement(driver, checks.nextButton, 10);
-        checks.nextButton.click();
-        checks.typeBranche("34");
-        checks.clicknextButton();
-        Utils.waitForElement(driver, checks.nextButton, 10);
-        checks.nextButton.click();
-        Utils.waitForElement(driver, checks.nextButton, 10);
-        checks.nextButton.click();
+        all.orderChecksBook.click();
+        checks.click_nextButton();
+        checks.click_nextButton();
+        checks.click_nextButton();
+        checks.click_accept_order_Button();
         checks.clickscreenCaptureButton();
 
 

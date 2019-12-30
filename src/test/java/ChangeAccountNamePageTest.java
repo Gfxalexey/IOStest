@@ -16,14 +16,13 @@ public class ChangeAccountNamePageTest extends BasePage {
         DashbordPage dashbordPage = new DashbordPage(driver);
         ChangeAccountNamePage change = new ChangeAccountNamePage(driver);
         loginPage.EnterButton.click();
-        Thread.sleep(1000);
-        loginPage.loginsucces(PropertyManager.getInstance().getMeetBankerPageTestId(), PropertyManager.getInstance().getMeetBankerPageTestPass(), PropertyManager.getInstance().getMeetBankerPageTestPass());
-        dashbordPage.TutorialSkip.click();
+        loginPage.click_changeUser();
+        loginPage.loginsucces(PropertyManager.getInstance().getChangeAccountNamePageTestId(), PropertyManager.getInstance().getChangeAccountNamePageTestPass(), PropertyManager.getInstance().getChangeAccountNamePageTestPass());
         Utils.waitForbanner(driver, dashbordPage.Banner, 1);
         dashbordPage.click_HamburgerButton();
         change.click_change_name();
         change.type_new_Name("אוטומציה");
         change.click_Ok_Button();
-        Assert.assertEquals("אוטומציה",change.change_name.getText());
+        Assert.assertEquals("אוטומציה",change.new_name.getText());
     }
     }

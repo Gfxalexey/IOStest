@@ -160,6 +160,8 @@ public class DashbordPage {
     @iOSXCUITFindBy(iOSNsPredicate = "type == 'XCUIElementTypeButton' AND name  CONTAINS 'VIP'")
     public  MobileElement VIP;
 
+    @iOSXCUITFindBy(iOSClassChain = "**/XCUIElementTypeCell[1]/**/XCUIElementTypeStaticText[3]")
+    public  MobileElement num_3;
 
 
     @Step("לחיצה על פגישה עם בנקאי")

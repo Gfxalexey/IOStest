@@ -12,59 +12,53 @@ public class CreditCardOrderPageTest extends BasePage {
 
     @Test(priority = 1, description = "הזמנת כרטיס אשרי חדש ויזה")
     public void CreditCardOrder() throws InterruptedException {
-        LoginPage loginPage = new LoginPage(driver);
-        DashbordPage dashbordPage = new DashbordPage(driver);
-        CreditCardOrder cardOrder = new CreditCardOrder(driver);
-//        Utils.wait_and_click_Element(driver,loginPage.AllowButton,10);
-        loginPage.EnterButton.click();
-        Thread.sleep(1000);
-        loginPage.loginsucces(PropertyManager.getInstance().getCreditCardOrderPageTestId(), PropertyManager.getInstance().getCreditCardOrderPageTestPass(), PropertyManager.getInstance().getCreditCardOrderPageTestPass());
-        dashbordPage.TutorialSkip.click();
-        if (driver.findElements(By.id("com.ideomobile.discount:id/bannerImageImageView\n")).size() > 0) {
-            driver.navigate().back();
-        }
-        dashbordPage.HamburgerButton.click();
-        dashbordPage.clickallaction();
-        Utils.scrollToText("הזמנת כרטיס אשראי", driver);
-        cardOrder.clickvisacardButton();
-        cardOrder.clickcontinueButton();
-        cardOrder.clickcontinueButton1();
-        cardOrder.typecardname("MIHSA");
-        driver.navigate().back();
-        cardOrder.clickdateButton();
-        cardOrder.clickcheckBox();
-        cardOrder.clicktoggleButtonNo();
-        cardOrder.clickcontinueButton3();
-        cardOrder.clickcontinueButton4();
-        Utils.waitForElement(driver, cardOrder.captureButton, 10);
-        cardOrder.clickcaptureButton();
-    }
+    LoginPage loginPage = new LoginPage(driver);
+    DashbordPage dashbordPage = new DashbordPage(driver);
+    CreditCardOrder cardOrder = new CreditCardOrder(driver);
+    AllActionPage all=new AllActionPage(driver);
+    loginPage.EnterButton.click();
+    loginPage.click_changeUser();
+    loginPage.loginsucces(PropertyManager.getInstance().getCreditCardOrderPageTestId(), PropertyManager.getInstance().getCreditCardOrderPageTestPass(), PropertyManager.getInstance().getCreditCardOrderPageTestPass());
+    loginPage.EnterButton.click();
+    dashbordPage.HamburgerButton.click();
+    dashbordPage.clickallaction();
+    Utils.scrollToTextIOS("הזמנת כרטיס אשראי", driver);
+    all.click_credit_card_order();
+    cardOrder.click_visacard_Button();
+    cardOrder.click_continue_Button();
+    cardOrder.click_continue_Button();
+    cardOrder.click_dateButton();
+    cardOrder.click_checkBox();
+    cardOrder.click_toggleButtonNo();
+    cardOrder.type_cardname("MISHA");
+    cardOrder.board_continue.click();
+    Utils.waitForElement(driver,cardOrder.continueButton,1);
+    cardOrder.click_continue_Button();
+   cardOrder.click_captureButton();
+   }
 
     @Test(description = "הזמנת כרטיס שם לא תקין")
     public void CreditCardOrderInvalidAmoun() throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);
         DashbordPage dashbordPage = new DashbordPage(driver);
         CreditCardOrder cardOrder = new CreditCardOrder(driver);
-        Utils.wait_and_click_Element(driver,loginPage.AllowButton,10);
+        AllActionPage all=new AllActionPage(driver);
         loginPage.EnterButton.click();
-        Thread.sleep(1000);
+        loginPage.click_changeUser();
         loginPage.loginsucces(PropertyManager.getInstance().getCreditCardOrderPageTestId(), PropertyManager.getInstance().getCreditCardOrderPageTestPass(), PropertyManager.getInstance().getCreditCardOrderPageTestPass());
-        dashbordPage.TutorialSkip.click();
-        if (driver.findElements(By.id("com.ideomobile.discount:id/bannerImageImageView\n")).size() > 0) {
-            driver.navigate().back();
-        }
+        loginPage.EnterButton.click();
         dashbordPage.HamburgerButton.click();
         dashbordPage.clickallaction();
-        Utils.scrollToText("הזמנת כרטיס אשראי", driver);
-        cardOrder.clickvisacardButton();
-        cardOrder.clickcontinueButton();
-        cardOrder.clickcontinueButton1();
-        cardOrder.typecardname("a");
-        driver.navigate().back();
-        cardOrder.clickdateButton();
-        cardOrder.clickcheckBox();
-        cardOrder.clicktoggleButtonNo();
-        cardOrder.clickcontinueButton3();
+        Utils.scrollToTextIOS("הזמנת כרטיס אשראי", driver);
+        all.click_credit_card_order();
+        cardOrder.click_visacard_Button();
+        cardOrder.click_continue_Button();
+        cardOrder.click_continue_Button();
+        cardOrder.click_dateButton();
+        cardOrder.click_checkBox();
+        cardOrder.click_toggleButtonNo();
+        cardOrder.type_cardname("a");
+        cardOrder.board_continue.click();
         String massage = cardOrder.errorname.getText();
         Assert.assertEquals("יש להזין שם באותיות באנגלית", massage);
     }

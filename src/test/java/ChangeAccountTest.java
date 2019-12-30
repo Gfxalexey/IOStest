@@ -26,49 +26,20 @@ import Utils.PropertyManager;
 
 public class ChangeAccountTest extends BasePage {
 
-    @Test(priority = 1, description = "החלפת חשבון")
-    @Ignore
-    public void Change_Account() throws InterruptedException {
-        LoginPage loginPage = new LoginPage(driver);
-        DashbordPage dashbordPage = new DashbordPage(driver);
-        ChangeAccountPage changeAccountPage = new ChangeAccountPage(driver);
-        loginPage.EnterButton.click();
-        Thread.sleep(1000);
-        loginPage.loginsucces(PropertyManager.getInstance().getChangeAccountTestId(), PropertyManager.getInstance().getChangeAccountTestPass(), PropertyManager.getInstance().getChangeAccountTestPass());
-        dashbordPage.TutorialSkip.click();
-        if (driver.findElements(By.id("com.ideomobile.discount:id/bannerImageMainButtonX")).size() > 0) {
-            driver.navigate().back();
-        }
-        dashbordPage.HamburgerButton.click();
-        String Numnow = dashbordPage.accountNumber.getText();
-        dashbordPage.clickchooseAcoountButton();
-        changeAccountPage.clicknewAccount();
-        Thread.sleep(4000);
-        driver.navigate().back();
-        dashbordPage.negative_button.click();
-        //  Utils.waitForElement(driver,dashbordPage.balanceOfAccount,10);
-        dashbordPage.HamburgerButton.click();
-        String Numnow2 = dashbordPage.accountNumber.getText();
-
-        if (Numnow != Numnow2) {
-            System.out.println("חשבון הוחלף הבצלחה");
-        } else System.out.println("חשבון לא הוחלף");
-    }
 
     @Test(priority = 1, description = "החלפת חשבון")
     public void Change_Account_IOS() throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);
         DashbordPage dashbordPage = new DashbordPage(driver);
-        ChangeAccountPage changeAccountPage = new ChangeAccountPage(driver);
         loginPage.EnterButton.click();
-        Utils.TapCordinate(driver,85,448);
+        loginPage.click_changeUser();
         loginPage.loginsucces(PropertyManager.getInstance().getChangeAccountTestId(), PropertyManager.getInstance().getChangeAccountTestPass(), PropertyManager.getInstance().getChangeAccountTestPass());
         Utils.wait_and_click_Element(driver,dashbordPage.Banner,2);
-        String Numnow = dashbordPage.accountNumber.getText();
+        String Numnow = dashbordPage.num_3.getText();
         dashbordPage.HamburgerButton.click();
         dashbordPage.clickchooseAcoountButton();
-        Utils.TapCordinate(driver,125,348);
-        String Numnow2 = dashbordPage.accountNumber.getText();
+        Utils.TapCordinate(driver,214,194);
+        String Numnow2 = dashbordPage.num_3.getText();
         if (Numnow != Numnow2) {
             System.out.println("חשבון הוחלף הבצלחה");
         } else System.out.println("חשבון לא הוחלף");

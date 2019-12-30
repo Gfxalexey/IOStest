@@ -15,7 +15,7 @@ public class CancelCyclicTransferPageTest extends BasePage {
         CancelCyclicTransferPage cancel = new CancelCyclicTransferPage(driver);
         AllActionPage all=new AllActionPage(driver);
         loginPage.EnterButton.click();
-        Utils.TapCordinate(driver,85,448);
+        loginPage.click_changeUser();
         loginPage.loginsucces(PropertyManager.getInstance().getCancelCyclicTransferPageTestId(), PropertyManager.getInstance().getCancelCyclicTransferPageTestPass(), PropertyManager.getInstance().getCancelCyclicTransferPageTestPass());
         Utils.wait_and_click_Element(driver,dashbordPage.Banner,5);
         dashbordPage.click_HamburgerButton();

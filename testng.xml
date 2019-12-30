@@ -10,10 +10,18 @@
 
             <classes>
 <!--                <class name="VIPFlyPageTest"/>-->
+<!--                <class name="CashWithdrawalPageTest"/>-->
+<!--                <class name="CancelCyclicTransferPageTest"/>-->
 <!--                <class name="GetLoanPageTest"/>-->
 <!--                <class name="TransfersPageTest"/>-->
 <!--                <class name="WithdrawalOfDepositTest"/>-->
-                <class name="MeetBankerPageTest"/>
+<!--                <class name="MeetBankerPageTest"/>-->
+<!--                <class name="ChangeAccountNamePageTest"/>-->
+<!--                <class name="ChangeAccountTest"/>-->
+<!--                <class name="CheckBookOrderPageTest"/>-->
+                <class name="CreditCardOrderPageTest"/>
+
+
             </classes>
         </test>
 <!--    <test name="samsung note9 Test">-->

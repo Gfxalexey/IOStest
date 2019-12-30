@@ -5,6 +5,7 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
@@ -83,4 +84,14 @@ public class AllActionPage {
     @iOSXCUITFindBy(iOSNsPredicate = "type =='XCUIElementTypeButton' AND name BEGINSWITH 'משיכה מפיקדון'")
 
     public  MobileElement withdrawalDeposit;
+
+    @iOSXCUITFindBy(iOSNsPredicate = "type == 'XCUIElementTypeButton' AND name  BEGINSWITH 'הזמנת כרטיס אשראי'")
+    public  MobileElement credit_card_order;
+
+    @Step("לחיצה על הזמנת כרטיס אשראי")
+    public AllActionPage click_credit_card_order() {
+        this.credit_card_order.click();
+        return this;
+    }
+
 }

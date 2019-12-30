@@ -41,8 +41,3 @@ public class CashWithdrawalPageTest extends BasePage {
         Thread.sleep(2000);
     }
 }
-//        @AfterMethod
-//        public void teardown() {
-//            driver.closeApp();
-//        }
-//    }

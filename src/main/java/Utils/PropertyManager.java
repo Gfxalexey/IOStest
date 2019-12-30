@@ -53,6 +53,8 @@ public class PropertyManager {
     private  String ToucherPageTestId;
     private  String VIPFlyPageTestPass;
     private  String VIPFlyPageTestId;
+    private  String ChangeAccountNamePageTestPass;
+    private  String ChangeAccountNamePageTestId;
     private  String TwoGoCardPageTestPass;
     private  String SettingsPageTestId;
 
@@ -282,9 +284,17 @@ public class PropertyManager {
         TwoGoCardPageTestPass = prop.getProperty("TwoGoCardPageTest.password");
         SettingsPageTestId = prop.getProperty("SettingsPageTest.id");
         SettingsPageTestPass = prop.getProperty("SettingsPageTest.password");
+        ChangeAccountNamePageTestId = prop.getProperty("ChangeAccountNamePageTest.id");
+        ChangeAccountNamePageTestPass = prop.getProperty("ChangeAccountNamePageTest.password");
 
 
     }
 
+    public String getChangeAccountNamePageTestPass() {
+        return ChangeAccountNamePageTestPass;
+    }
 
+    public String getChangeAccountNamePageTestId() {
+        return ChangeAccountNamePageTestId;
+    }
 }

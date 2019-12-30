@@ -52,7 +52,7 @@ public class BasePage {
             cap.setCapability(MobileCapabilityType.PLATFORM_VERSION, platformVersion);
             cap.setCapability(MobileCapabilityType.DEVICE_NAME, device);
             cap.setCapability(MobileCapabilityType.UDID, device);
-            cap.setCapability("xcodeOrgId", "com.discountalex.WebDriverAgentRunner");
+            cap.setCapability("xcodeOrgId", "com.discountalexx.WebDriverAgentRunner");
             cap.setCapability("xcodeSigningId", "iPhone Developer");
             cap.setCapability(IOSMobileCapabilityType.BUNDLE_ID, "ngsoft.il.co.discountbank.discountbank");
             cap.setCapability(IOSMobileCapabilityType.USE_NEW_WDA, "true");
