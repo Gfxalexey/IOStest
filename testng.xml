@@ -11,8 +11,9 @@
             <classes>
 <!--                <class name="VIPFlyPageTest"/>-->
 <!--                <class name="GetLoanPageTest"/>-->
-                <class name="TransfersPageTest"/>
+<!--                <class name="TransfersPageTest"/>-->
 <!--                <class name="WithdrawalOfDepositTest"/>-->
+                <class name="MeetBankerPageTest"/>
             </classes>
         </test>
 <!--    <test name="samsung note9 Test">-->

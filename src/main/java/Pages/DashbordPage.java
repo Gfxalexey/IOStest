@@ -138,8 +138,11 @@ public class DashbordPage {
     public MobileElement massageToBankerButton;
     @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"דִידִי – הנציגה הדיגיטלית\")")
     public MobileElement didiButton;
+
     @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"פגישה עם בנקאי\")")
+    @iOSXCUITFindBy(iOSNsPredicate = "type =='XCUIElementTypeButton' AND name BEGINSWITH 'פגישה עם בנקאי חדש'")
     public MobileElement meetingBankerButton;
+
     @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"מייל לבנקאי\")")
     public MobileElement mailToBankerButton;
 

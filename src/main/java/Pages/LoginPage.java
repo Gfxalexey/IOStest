@@ -37,6 +37,10 @@ public class LoginPage {
     @iOSXCUITFindBy(iOSNsPredicate = "type == 'XCUIElementTypeTextField' AND name  BEGINSWITH 'קוד מזהה'")
     public MobileElement typeCODE;
 
+    @iOSXCUITFindBy(iOSNsPredicate = "type == 'XCUIElementTypeButton' AND name  BEGINSWITH 'החלפת משתמש'")
+    public MobileElement changeUser;
+
+
 
     @iOSXCUITFindBy(xpath = "//android.widget.RelativeLayout[@content-desc=\"כניסה לאפליקציית דיסקונט\"]/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.Button[2]\n")
     public MobileElement ForgotPassButton;
@@ -92,6 +96,12 @@ public LoginPage clickquickcheckDeposit() {
 @Step("לחיצה על בקשת הלוואה מדף לוגין")
 public LoginPage clicgetquickloan() {
     this.quickloan.click();
+    return this;
+}
+
+@Step("לחיצה על החלפת משתמש")
+public LoginPage click_changeUser() {
+    this.changeUser.click();
     return this;
 }
 

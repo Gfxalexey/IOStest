@@ -27,7 +27,7 @@ public class TransfersPage {
     public WebElement Titel2Text;
 
     @AndroidFindBy(id = "com.ideomobile.discount:id/choose_beneficiary_from_beneficiary_list_button")//או בחרו מרשימה/ מהעברה קודמת
-    @iOSXCUITFindBy(accessibility = "או בחרו מרשימה / מהעברה קודמת\n")
+    @iOSXCUITFindBy(iOSNsPredicate = "type =='XCUIElementTypeButton' AND name BEGINSWITH 'או בחרו מרשימה / מהעברה קודמת'")
     public WebElement beneficiary_list_button;
 
     @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.Button\n")

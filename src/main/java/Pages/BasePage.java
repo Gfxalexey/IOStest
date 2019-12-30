@@ -59,7 +59,7 @@ public class BasePage {
             cap.setCapability(IOSMobileCapabilityType.WDA_LOCAL_PORT, systemPort);
             URL url = new URL(appiumServer);
             driver=new AppiumDriver<MobileElement>(url,cap);
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
             Assert.assertNotNull(driver);
 
 

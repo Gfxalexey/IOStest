@@ -16,48 +16,42 @@ public class MeetBankerPageTest extends BasePage {
         LoginPage loginPage = new LoginPage(driver);
         DashbordPage dashbordPage = new DashbordPage(driver);
         MeetBankerPage meet = new MeetBankerPage(driver);
-        Utils.wait_and_click_Element(driver, loginPage.AllowButton, 3);
         loginPage.EnterButton.click();
-        Thread.sleep(1000);
+//        Utils.TapCordinate(driver,85,448);
+        loginPage.click_changeUser();
         loginPage.loginsucces(PropertyManager.getInstance().getMeetBankerPageTestId(), PropertyManager.getInstance().getMeetBankerPageTestPass(), PropertyManager.getInstance().getMeetBankerPageTestPass());
-        dashbordPage.TutorialSkip.click();
-        Utils.waitForbanner(driver, dashbordPage.Banner, 2);
+        Utils.waitForbanner(driver, dashbordPage.Banner, 1);
         dashbordPage.click_HamburgerButton();
         dashbordPage.click_meetingBankerButton();
-        meet.click_Meet_with_Investment();
-        Utils.waitForElement(driver, meet.Meet_with_Investment, 3);
+        meet.click_Meet_Banker();
         meet.click_continueButton();
-        MobileElement element = (MobileElement) driver.findElements(By.id("com.ideomobile.discount:id/appointmentsListItemMainLayout")).get(0);
-        element.click();
-        Utils.waitForElement(driver, meet.phone_titel, 2);
-        meet.click_continueButton2();
-        meet.click_continueButton3();
-        driver.hideKeyboard();
+        meet.credit_inquiry.click();
+        meet.click_continueButton();
+        meet.day.click();
+        meet.click_continueButton();
+        Utils.waitForElement(driver,meet.continueButton,10);
+        meet.click_continueButton();
         meet.type_text("בדיקות אוטומציה");
-        meet.click_finish_continue();
-        Utils.waitForElement(driver, meet.appointmentConfirmationCard, 3);
-        System.out.println(meet.appointmentConfirmationCard);
+        meet.AcceptFinish.click();
+        System.out.println(meet.pgisha.getText());
+
 
 
     }
 
     @Test(priority = 3, description = "ביטול פגישה עם בנקאי" )
-
     public void Cancel_Meet_with_Investment() throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);
         DashbordPage dashbordPage = new DashbordPage(driver);
         MeetBankerPage meet = new MeetBankerPage(driver);
-        Utils.wait_and_click_Element(driver, loginPage.AllowButton, 3);
         loginPage.EnterButton.click();
-        Thread.sleep(1000);
+        Utils.TapCordinate(driver,85,448);
         loginPage.loginsucces(PropertyManager.getInstance().getMeetBankerPageTestId(), PropertyManager.getInstance().getMeetBankerPageTestPass(), PropertyManager.getInstance().getMeetBankerPageTestPass());
-        dashbordPage.TutorialSkip.click();
-        Utils.waitForbanner(driver, dashbordPage.Banner, 2);
+        Utils.waitForbanner(driver, dashbordPage.Banner, 1);
         dashbordPage.click_HamburgerButton();
         dashbordPage.click_meetingBankerButton();
         meet.click_cancel_meet_banker_Button();
         meet.click_PopupPositiveButton();
-        meet.permission_allow_button2.click();
-        Thread.sleep(1000);
+
     }
 }
