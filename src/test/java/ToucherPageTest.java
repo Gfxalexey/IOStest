@@ -15,12 +15,13 @@ import org.testng.annotations.Test;
         DashbordPage dashbordPage = new DashbordPage(driver);
         ToucherPage toucher = new ToucherPage(driver);
         loginPage.EnterButton.click();
-        Thread.sleep(1000);
         loginPage.loginsucces(PropertyManager.getInstance().getToucherPageTestId(), PropertyManager.getInstance().getToucherPageTestPass(), PropertyManager.getInstance().getToucherPageTestPass());
-        dashbordPage.TutorialSkip.click();
+        loginPage.EnterButton.click();
         Utils.waitForbanner(driver, dashbordPage.Banner, 3);
         dashbordPage.click_HamburgerButton();
-        Utils.scrollToText("טאצ'ר - חשבון דיגיטלי",driver);
+        Utils.scrollToTextIOS("טאצ׳ר - חשבון דיגיטלי",driver);
+        dashbordPage.Toucher_menu.click();
+
         toucher.click_join();
         toucher.click_ContinueButton_1();
         toucher.type_Email("appium@gmail.com");

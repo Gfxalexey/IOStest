@@ -88,10 +88,18 @@ public class AllActionPage {
     @iOSXCUITFindBy(iOSNsPredicate = "type == 'XCUIElementTypeButton' AND name  BEGINSWITH 'הזמנת כרטיס אשראי'")
     public  MobileElement credit_card_order;
 
+    @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"המרת מט\"ח\")")
+    @iOSXCUITFindBy(iOSNsPredicate = "type =='XCUIElementTypeButton' AND name CONTAINS  'המרת מט'")
+    public MobileElement foreignConversionsButton;
+
     @Step("לחיצה על הזמנת כרטיס אשראי")
     public AllActionPage click_credit_card_order() {
         this.credit_card_order.click();
         return this;
     }
-
+    @Step("לחיצה על המרת מטח")
+    public AllActionPage click_foreignConversionsButton() {
+        foreignConversionsButton.click();
+        return this;
+    }
 }

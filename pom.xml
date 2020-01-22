@@ -86,14 +86,14 @@
                 <configuration>
                     <suiteXmlFiles>
 <!--                        <suiteXmlFile>D:\appium_project\testng-home.xml</suiteXmlFile>-->
-                        <suiteXmlFile>D:\appium_project\testngParallel2.xml</suiteXmlFile>
+                        <suiteXmlFile>/Users/macoscatalina/Desktop/Desktop - Mac — MacOsCatalina/appium_project_ios/testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
                     <systemPropertyVariables>
                         <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
-                        <allure.results.directory>C:\Users\alexey\.jenkins\workspace\Mobile\allure-results</allure.results.directory>
+<!--                        <allure.results.directory>C:\Users\alexey\.jenkins\workspace\Mobile\allure-results</allure.results.directory>-->
                     </systemPropertyVariables>
                 </configuration>
                 <dependencies>

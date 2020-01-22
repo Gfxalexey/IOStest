@@ -21,14 +21,16 @@ public class DidiPageTest extends BasePage {
         loginPage.EnterButton.click();
         loginPage.loginsuccesOnlyPass(PropertyManager.getInstance().getCancelCyclicTransferPageTestPass());
         loginPage.EnterButton.click();
-        Utils.wait_and_click_Element(driver,dashbordPage.Banner,1);
+//        Utils.wait_and_click_Element(driver,dashbordPage.Banner,1);
         didi.type_Question("שלום");
-//        Assert.assertEquals("תודה ששאלת, עוד יום יפה בדיסקונט :-). יש לך שאלה בענייני החשבון שלך או בנושא בנקאי כלשהו? אשמח לעזור.", didi.AnswerText.getText());
-        Thread.sleep(1000);
-        didi.type_Question("dkjsdkfjh");
-        Thread.sleep(1000);
-        didi.botBalanceAllTransactions.click();
-        Utils.waitForElement(driver, didi.botBalanceamount, 5);
+        System.out.println(didi.AnswerText.getText());
+
+////        Assert.assertEquals("תודה ששאלת, עוד יום יפה בדיסקונט :-). יש לך שאלה בענייני החשבון שלך או בנושא בנקאי כלשהו? אשמח לעזור.", didi.AnswerText.getText());
+//        Thread.sleep(1000);
+//        didi.type_Question("dkjsdkfjh");
+//        Thread.sleep(1000);
+//        didi.botBalanceAllTransactions.click();
+//        Utils.waitForElement(driver, didi.botBalanceamount, 5);
 
 
     }

@@ -1,87 +1,89 @@
-import Pages.*;
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileBy;
-import io.appium.java_client.MobileElement;
-import org.openqa.selenium.By;
-import org.testng.annotations.*;
-
-import java.net.MalformedURLException;
-import java.util.List;
-import java.util.Properties;
 import Listeners.TestAllureListener;
+import Pages.*;
 import Utils.PropertyManager;
+import org.openqa.selenium.By;
+import org.testng.annotations.Ignore;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
+
 @Listeners({TestAllureListener.class})
 public class ForeignCurrencyConversionsPageTest extends BasePage {
     @Test(priority = 1,description = "המרת מטח משקל לדולר")
+
     public void Convers_ILS_To_USD() throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);
         AllActionPage all=new AllActionPage(driver);
         DashbordPage dashbordPage = new DashbordPage(driver);
         ForeignCurrencyConversionsPage foreign =new ForeignCurrencyConversionsPage(driver);
-//        Utils.wait_and_click_Element(driver,loginPage.AllowButton,10);
         loginPage.EnterButton.click();
-        Thread.sleep(1000);
+        loginPage.click_changeUser();
         loginPage.loginsucces(PropertyManager.getInstance().getForeignCurrencyConversionsPageTestId(), PropertyManager.getInstance().getForeignCurrencyConversionsPageTestPass(), PropertyManager.getInstance().getForeignCurrencyConversionsPageTestPass());
-        dashbordPage.TutorialSkip.click();
-        if(driver.findElements(By.id("com.ideomobile.discount:id/bannerImageImageView")).size()>0){
-            driver.navigate().back();
-        }
+        loginPage.EnterButton.click();
+
         dashbordPage.HamburgerButton.click();
         dashbordPage.allaction.click();
-        Utils.scrollToText("המרת",driver);
+//        Utils.scrollToTextIOS("המרת מט/״ח",driver);
+        all.click_foreignConversionsButton();
         foreign.click_ILSButton();
         foreign.click_continueButton();
-        foreign.click_USDButton();
+        Utils.waitForElement(driver,foreign.USDButton,1);
+        foreign.EURButton.click();
         foreign.click_continueButton2();
-        if(driver.findElements(By.id("com.ideomobile.discount:id/fConversionChooseAccountExitBtn")).size()>0){
-            foreign.XXX.click();
-            foreign.bottomConfirmButton.click();
+
+        try {
+            boolean isElementPresent = foreign.click_one_account.isDisplayed();
+            if(isElementPresent) {
+                foreign.click_one_account.click();
+                foreign.click_continueButton();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        foreign.type_amountConverterButton("2");
-        driver.navigate().back();
-        foreign.click_continueButton3();
-        if(driver.findElements(By.id("com.ideomobile.discount:id/error_positive_button")).size()>0){
-            foreign.click_OKButton();
-        }
+
+//        if(driver.findElements(By.id("com.ideomobile.discount:id/fConversionChooseAccountExitBtn")).size()>0){
+//            foreign.XXX.click();
+//            foreign.bottomConfirmButton.click();
+//        }
+        foreign.type_amountConverterButton("5");
+        foreign.board_continueButton.click();
+
+        Utils.wait_and_click_Element(driver,foreign.OKButton,2);
         Utils.waitForElement(driver,foreign.continueButton,10);
-        foreign.continueButton.click();
+        foreign.Accept_continueButton.click();
         foreign.ScreenCaptureButton.click();
 
     }
-    @Test(priority = 0,description = "המרת מטח מדולר לשקל")
+    @Test(invocationCount = 1,priority = 0,description = "המרת מטח מדולר לשקל")
     public void Convers_USD_To_ILS() throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);
+        AllActionPage all=new AllActionPage(driver);
         DashbordPage dashbordPage = new DashbordPage(driver);
         ForeignCurrencyConversionsPage foreign =new ForeignCurrencyConversionsPage(driver);
-        AllActionPage all=new AllActionPage(driver);
-//        Utils.wait_and_click_Element(driver,loginPage.AllowButton,10);
         loginPage.EnterButton.click();
-        Thread.sleep(1000);
+        loginPage.click_changeUser();
         loginPage.loginsucces(PropertyManager.getInstance().getForeignCurrencyConversionsPageTestId(), PropertyManager.getInstance().getForeignCurrencyConversionsPageTestPass(), PropertyManager.getInstance().getForeignCurrencyConversionsPageTestPass());
-        dashbordPage.TutorialSkip.click();
-        if(driver.findElements(By.id("com.ideomobile.discount:id/bannerImageMainButtonX")).size()>0){
-            driver.navigate().back();
-        }
+        loginPage.EnterButton.click();
+
         dashbordPage.HamburgerButton.click();
         dashbordPage.allaction.click();
-        Utils.scrollToText("המרת ",driver);
-
+        all.click_foreignConversionsButton();
         foreign.click_USDButton();
         foreign.click_continueButton();
-        if(driver.findElements(By.id("com.ideomobile.discount:id/fConversionChooseAccountExitBtn")).size()>0){
-            foreign.XXX.click();
-            foreign.bottomConfirmButton.click();
-        }
-        foreign.click_ILSButton();
+        foreign.click_one_account.click();
+        foreign.click_continueButton();
+        Utils.waitForElement(driver,foreign.ILSButton,2);
+        foreign.ILSButton.click();
         foreign.click_continueButton2();
-        foreign.type_amountConverterButton("2");
-        driver.navigate().back();
-        foreign.click_continueButton3();
-        if(driver.findElements(By.id("com.ideomobile.discount:id/error_positive_button")).size()>0){
-            foreign.click_OKButton();
-        }
-        Utils.waitForElement(driver,foreign.continueButton,15);
-        foreign.continueButton.click();
+
+
+        Utils.waitForElement(driver,foreign.amountEditText,1);
+
+        foreign.type_amountConverterButton("5");
+        foreign.board_continueButton.click();
+
+        Utils.wait_and_click_Element(driver,foreign.OKButton,2);
+//        Utils.waitForElement(driver,foreign.Accept_continueButton,10);
+        foreign.Accept_continueButton.click();
         foreign.ScreenCaptureButton.click();
 
     }

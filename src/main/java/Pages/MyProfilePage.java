@@ -4,6 +4,7 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import static java.time.Duration.ofSeconds;
@@ -23,7 +24,9 @@ public class MyProfilePage {
 
     @AndroidFindBy(uiAutomator = "new UiSelector().text(\"טלפון נייד\")")
     public MobileElement Pelephone;
+
     @AndroidFindBy(uiAutomator = "new UiSelector().text(\"הסניף שלי\")")
+    @iOSXCUITFindBy(iOSNsPredicate = "type =='XCUIElementTypeStaticText' AND name BEGINSWITH 'הסניף שלי'")
     public MobileElement My_Branch;
 
 

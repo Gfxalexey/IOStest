@@ -22,15 +22,9 @@ public class MyProfilePageTest extends BasePage{
         LoginPage loginPage = new LoginPage(driver);
         DashbordPage dashbordPage = new DashbordPage(driver);
         MyProfilePage myProfilePage=new MyProfilePage(driver);
-        Utils.wait_and_click_Element(driver,loginPage.AllowButton,3);
-
         loginPage.EnterButton.click();
-        Thread.sleep(1000);
-        loginPage.loginsucces("4806006", "1q1q1q", "1q1q1q");
-        dashbordPage.TutorialSkip.click();
-        if(driver.findElements(By.id("com.ideomobile.discount:id/bannerImageImageView")).size()>0){
-            driver.navigate().back();
-        }
+        loginPage.loginsuccesOnlyPass("1q1q1q");
+        loginPage.EnterButton.click();
         dashbordPage.HamburgerButton.click();
         dashbordPage.click_MyProfile_button();
         Assert.assertEquals("הסניף שלי",myProfilePage.My_Branch.getText());

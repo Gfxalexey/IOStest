@@ -23,7 +23,7 @@ public class DidiPage {
     public MobileElement SendQuestionButton;
 
     @AndroidFindBy(id = "com.ideomobile.discount:id/botErrorAnswerTextView")
-
+    @iOSXCUITFindBy(iOSClassChain = "**/XCUIElementTypeCell[3]/**/XCUIElementTypeStaticText[1]")
     public MobileElement AnswerText;
 
     @AndroidFindBy(id = "com.ideomobile.discount:id/botRightButtonLayout")

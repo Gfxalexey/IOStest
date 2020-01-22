@@ -4,7 +4,7 @@
 
         <test name="IPHONE X test">
             <parameter name="device" value="de2af9fe57fc3845e3a0d2436e67d14765053a81"></parameter>
-        <parameter name="platformVersion" value="12.4"></parameter>
+        <parameter name="platformVersion" value="13.3"></parameter>
             <parameter name="appiumServer" value="http://127.0.0.1:4723/wd/hub"></parameter>
             <parameter name="systemPort" value="8289"></parameter>
 
@@ -19,7 +19,10 @@
 <!--                <class name="ChangeAccountNamePageTest"/>-->
 <!--                <class name="ChangeAccountTest"/>-->
 <!--                <class name="CheckBookOrderPageTest"/>-->
-                <class name="CreditCardOrderPageTest"/>
+<!--                <class name="CreditCardOrderPageTest"/>-->
+<!--                <class name="MyProfilePageTest"/>-->
+<!--                <class name="ForeignCurrencyConversionsPageTest"/>-->
+                <class name="TradePageTest"/>
 
 
             </classes>

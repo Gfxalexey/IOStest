@@ -4,6 +4,7 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import io.qameta.allure.Step;
 import org.openqa.selenium.support.PageFactory;
 
@@ -20,7 +21,9 @@ public class TradePage {
     @AndroidFindBy(id = "com.ideomobile.discount:id/securitiesSummaryFragmentSubtitle")  //תשואת תיק נומינלית מתחילת שנה:
     public MobileElement securitiesSummaryFragment;
     @AndroidFindBy(id = "com.ideomobile.discount:id/summary_fragment_title")  //שווי תיק
+    @iOSXCUITFindBy(iOSNsPredicate = "type == 'XCUIElementTypeButton' AND name  BEGINSWITH 'אודות ואבטחת מידע'")
     public MobileElement summary_fragment;
+
     @AndroidFindBy(id = "com.ideomobile.discount:id/stocksPortfolioButton")  //תיק ניירות ערך
     public MobileElement stocksPortfolioButton;
     @AndroidFindBy(id = "com.ideomobile.discount:id/stocksOrdersButton")  //הוראות ממתינות

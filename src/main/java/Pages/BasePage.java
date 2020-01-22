@@ -42,6 +42,10 @@ public class BasePage {
         try {
 
             DesiredCapabilities cap = new DesiredCapabilities();
+
+//            cap.setCapability("realDeviceLogger", "/Users/macoscatalina/Desktop/projects/appium_project_ios/logs");
+//            cap.setCapability("showIOSLog", "true");
+
             cap.setCapability(IOSMobileCapabilityType.AUTO_ACCEPT_ALERTS,"true");
             cap.setCapability(MobileCapabilityType.NO_RESET, "true");
             cap.setCapability(MobileCapabilityType.FULL_RESET, "false");
@@ -52,7 +56,7 @@ public class BasePage {
             cap.setCapability(MobileCapabilityType.PLATFORM_VERSION, platformVersion);
             cap.setCapability(MobileCapabilityType.DEVICE_NAME, device);
             cap.setCapability(MobileCapabilityType.UDID, device);
-            cap.setCapability("xcodeOrgId", "com.discountalexx.WebDriverAgentRunner");
+            cap.setCapability("xcodeOrgId", "com.discountalexxx.WebDriverAgentRunner");
             cap.setCapability("xcodeSigningId", "iPhone Developer");
             cap.setCapability(IOSMobileCapabilityType.BUNDLE_ID, "ngsoft.il.co.discountbank.discountbank");
             cap.setCapability(IOSMobileCapabilityType.USE_NEW_WDA, "true");

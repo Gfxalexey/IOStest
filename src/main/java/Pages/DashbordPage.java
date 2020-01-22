@@ -72,11 +72,15 @@ public class DashbordPage {
 
     @AndroidFindBy(id = "com.ideomobile.discount:id/error_negative_button")
     public MobileElement negative_button;
+
     @AndroidFindBy(id = "com.ideomobile.discount:id/newMainMenu_MyProfile_layout")
+    @iOSXCUITFindBy(iOSNsPredicate = "type =='XCUIElementTypeButton' AND name BEGINSWITH 'לחץ לפרופיל שלי'")
     public MobileElement MyProfile_button;
+
     @AndroidFindBy(id = "com.ideomobile.discount:id/bannerImageImageView")
     @iOSXCUITFindBy(accessibility = "סגירה")
     public MobileElement Banner;
+
 //    @AndroidFindBy(id = "com.ideomobile.discount:id/bannerImageMainButtonX")
 //    public MobileElement Banner_X_Button;
     @AndroidFindBy(id = "com.ideomobile.discount:id/newMainMenu_myInsights_title")
@@ -115,7 +119,7 @@ public class DashbordPage {
     public MobileElement cashWithdrawalButton;
 
     @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"המרת מט\"ח\")")
-    @iOSXCUITFindBy(iOSNsPredicate = "type =='XCUIElementTypeButton' AND name BEGINSWITH 'המרת מטֿ/״ח'")
+    @iOSXCUITFindBy(iOSNsPredicate = "type =='XCUIElementTypeButton' AND name CONTAINS  'המרת מט'")
     public MobileElement foreignConversionsButton;
 
     @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"עובר ושב\")")
@@ -151,12 +155,16 @@ public class DashbordPage {
     public MobileElement dashLoanMenu;
 
     @AndroidFindBy(uiAutomator = "new UiSelector().text(\"תיק ניירות ערך\")")
+    @iOSXCUITFindBy(iOSNsPredicate = "type == 'XCUIElementTypeButton' AND name  CONTAINS 'תיק ניירות'")
     public MobileElement TradeLobby;
 
     @iOSXCUITFindBy(iOSNsPredicate = "type == 'XCUIElementTypeButton' AND name  BEGINSWITH 'אודות ואבטחת מידע'")
     public  MobileElement about_Us_security;
 
 //    @iOSXCUITFindBy(xpath = "//XCUIElementTypeApplication[@name=\"בנק דיסקונט\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[9]\n")
+    @iOSXCUITFindBy(iOSNsPredicate = "type == 'XCUIElementTypeButton' AND name  BEGINSWITH 'טאצ׳ר - חשבון דיגיטלי'")
+    public  MobileElement Toucher_menu;
+
     @iOSXCUITFindBy(iOSNsPredicate = "type == 'XCUIElementTypeButton' AND name  CONTAINS 'VIP'")
     public  MobileElement VIP;
 
@@ -228,6 +236,8 @@ public class DashbordPage {
         creditCardButton.click();
         return this;
     }
+
+
 
 
 }
