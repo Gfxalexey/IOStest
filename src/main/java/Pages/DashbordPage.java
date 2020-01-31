@@ -89,9 +89,13 @@ public class DashbordPage {
     public MobileElement bannerImageMainButtonX;
     @AndroidFindBy(id = "com.ideomobile.discount:id/DashboardButton")
     public MobileElement Dashboard_Home_Button;
+
+    @iOSXCUITFindBy(iOSNsPredicate = "type =='XCUIElementTypeButton' AND name BEGINSWITH 'לחץ להגדרות ושירותים'")
     @AndroidFindBy(id = "com.ideomobile.discount:id/newMainMenu_settingsButton")
     public MobileElement settingsButton;
 
+    @iOSXCUITFindBy(iOSNsPredicate = "type =='XCUIElementTypeButton' AND name BEGINSWITH 'יציאה'")
+    public MobileElement exitButton;
 
     //-------------------------------------------------------------------------------------------------------------------------------------
     @AndroidFindBy(uiAutomator = "new UiSelector().text(\"הפקדה לפיקדון\")")
@@ -115,7 +119,7 @@ public class DashbordPage {
     public MobileElement transferFriendCashButton;
 
     @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"משיכת מזומן ללא כרטיס\")")
-    @iOSXCUITFindBy(iOSNsPredicate = "type =='XCUIElementTypeButton' AND name BEGINSWITH 'משיכת מזומן ללא כרטיס'")
+    @iOSXCUITFindBy(iOSNsPredicate = "type =='XCUIElementTypeButton' AND name BEGINSWITH 'משיכת מזומן ללא כרטיס '")
     public MobileElement cashWithdrawalButton;
 
     @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"המרת מט\"ח\")")
@@ -158,6 +162,9 @@ public class DashbordPage {
     @iOSXCUITFindBy(iOSNsPredicate = "type == 'XCUIElementTypeButton' AND name  CONTAINS 'תיק ניירות'")
     public MobileElement TradeLobby;
 
+    @iOSXCUITFindBy(iOSNsPredicate = "type == 'XCUIElementTypeButton' AND name  CONTAINS '2'")
+    public MobileElement togo;
+
     @iOSXCUITFindBy(iOSNsPredicate = "type == 'XCUIElementTypeButton' AND name  BEGINSWITH 'אודות ואבטחת מידע'")
     public  MobileElement about_Us_security;
 
@@ -175,6 +182,11 @@ public class DashbordPage {
     @Step("לחיצה על פגישה עם בנקאי")
     public DashbordPage click_meetingBankerButton() {
         meetingBankerButton.click();
+        return this;
+    }
+    @Step("לחיצה על טו-גו")
+    public DashbordPage click_togo() {
+        togo.click();
         return this;
     }
     @Step("לחיצה על תיק ניירות ערך")

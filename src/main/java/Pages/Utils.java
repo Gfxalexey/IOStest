@@ -3,6 +3,7 @@ package Pages;
 import io.appium.java_client.*;
 import io.appium.java_client.android.AndroidTouchAction;
 import io.appium.java_client.ios.IOSDriver;
+import io.appium.java_client.ios.IOSTouchAction;
 import io.appium.java_client.touch.offset.ElementOption;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
@@ -257,6 +258,17 @@ public static void DragElement(WebElement element,WebElement ToElement, AppiumDr
     touch.longPress(ElementOption.element(element)).waitAction(waitOptions(ofSeconds(duration)))
             .moveTo(ElementOption.element(ToElement)).release().perform();
 }
+
+public static void DragElementIOS(WebElement element,WebElement ToElement, AppiumDriver<MobileElement> driver, long duration)  {
+    IOSTouchAction touch =new IOSTouchAction(driver);
+    touch.longPress(ElementOption.element(element)).waitAction(waitOptions(ofSeconds(duration)))
+            .moveTo(ElementOption.element(ToElement)).release().perform();
+}
+
+    public static void DragElement_point_to_point(int x_start, int y_start, int x_stop, int y_stop, long duration, AppiumDriver<MobileElement> driver) {
+        new TouchAction(driver).longPress(point(x_start, y_start)) .waitAction(waitOptions(ofSeconds(duration)))
+                .moveTo(point(x_stop, y_stop)) .release() .perform();
+    }
 
 
 public static void TapCordinate(AppiumDriver<MobileElement> driver, int x, int y) {

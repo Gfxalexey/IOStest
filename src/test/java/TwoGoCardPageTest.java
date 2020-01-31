@@ -1,6 +1,8 @@
 import Listeners.TestAllureListener;
 import Pages.*;
 import Utils.PropertyManager;
+import org.openqa.selenium.By;
+import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -13,18 +15,19 @@ public class TwoGoCardPageTest extends BasePage {
         DashbordPage dashbordPage = new DashbordPage(driver);
         TwoGoCardPage go =new TwoGoCardPage(driver);
         loginPage.EnterButton.click();
-        Thread.sleep(1000);
+        loginPage.click_changeUser();
         loginPage.loginsucces(PropertyManager.getInstance().getTwoGoCardPageTestId(), PropertyManager.getInstance().getTwoGoCardPageTestPass(), PropertyManager.getInstance().getTwoGoCardPageTestPass());
-        dashbordPage.TutorialSkip.click();
         Utils.waitForbanner(driver, dashbordPage.Banner, 3);
         dashbordPage.click_HamburgerButton();
         dashbordPage.allaction.click();
-        Utils.scrollToText("טעינת 2go",driver);
-        Utils.waitForElement(driver,go.StepTitle,10);
+        Utils.scrollToTextIOS("טעינת 2go",driver);
+        dashbordPage.click_togo();
+        go.click_card_2go();
+        go.click_ContinueButton();
+        Assert.assertEquals("סכום טעינה",go.amount_text_head.getText());
+//        Assert.assertEquals("הסכום המרבי בכרטיס לא יעלה על 450 ש/״ח",go.text_max_amount.getText());
         go.type_Amount("25");
-        driver.hideKeyboard();
-        go.click_ContinueButton_1();
-        Utils.waitForElement(driver,go.Confirmation_Amount,3);
+        go.click_Next_board();
         go.click_ContinueButton_2();
         go.click_ScreenCaptureButton();
     }

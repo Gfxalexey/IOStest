@@ -16,8 +16,9 @@ public class ChangeAccountNamePageTest extends BasePage {
         DashbordPage dashbordPage = new DashbordPage(driver);
         ChangeAccountNamePage change = new ChangeAccountNamePage(driver);
         loginPage.EnterButton.click();
-        loginPage.click_changeUser();
-        loginPage.loginsucces(PropertyManager.getInstance().getChangeAccountNamePageTestId(), PropertyManager.getInstance().getChangeAccountNamePageTestPass(), PropertyManager.getInstance().getChangeAccountNamePageTestPass());
+//        loginPage.click_changeUser();
+        loginPage.loginsuccesOnlyPass(PropertyManager.getInstance().getChangeAccountNamePageTestPass());
+//        loginPage.loginsucces(PropertyManager.getInstance().getChangeAccountNamePageTestId(), PropertyManager.getInstance().getChangeAccountNamePageTestPass(), PropertyManager.getInstance().getChangeAccountNamePageTestPass());
         Utils.waitForbanner(driver, dashbordPage.Banner, 1);
         dashbordPage.click_HamburgerButton();
         change.click_change_name();

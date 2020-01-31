@@ -4,29 +4,39 @@
 
         <test name="IPHONE X test">
             <parameter name="device" value="de2af9fe57fc3845e3a0d2436e67d14765053a81"></parameter>
-        <parameter name="platformVersion" value="13.3"></parameter>
+            <parameter name="platformVersion" value="13.3"></parameter>
             <parameter name="appiumServer" value="http://127.0.0.1:4723/wd/hub"></parameter>
             <parameter name="systemPort" value="8289"></parameter>
+<!--            <parameter name="buildapp" value="ngsoft.il.co.discountbank.discountbank"></parameter>-->
+            <parameter name="buildapp" value="il.co.discountbank.discountbank"></parameter>
 
-            <classes>
-<!--                <class name="VIPFlyPageTest"/>-->
+<!--            <classes>-->
+<!--                <class name=name"VIPFlyPageTest"/>-->
 <!--                <class name="CashWithdrawalPageTest"/>-->
 <!--                <class name="CancelCyclicTransferPageTest"/>-->
 <!--                <class name="GetLoanPageTest"/>-->
 <!--                <class name="TransfersPageTest"/>-->
 <!--                <class name="WithdrawalOfDepositTest"/>-->
 <!--                <class name="MeetBankerPageTest"/>-->
+<!--                <class name="TwoGoCardPageTest"/>-->
 <!--                <class name="ChangeAccountNamePageTest"/>-->
 <!--                <class name="ChangeAccountTest"/>-->
 <!--                <class name="CheckBookOrderPageTest"/>-->
 <!--                <class name="CreditCardOrderPageTest"/>-->
 <!--                <class name="MyProfilePageTest"/>-->
 <!--                <class name="ForeignCurrencyConversionsPageTest"/>-->
-                <class name="TradePageTest"/>
-
-
+<!--                <class name="TradePageTest"/>-->
+            <classes>
+                <class name="SettingsPageTest"/>
+<!--                <class name="CashWithdrawalPageTest">-->
+<!--                    <methods>-->
+<!--                        <include name="CashWithdrawal" />-->
+<!--                    </methods>-->
+<!--                </class>-->
             </classes>
         </test>
+
+
 <!--    <test name="samsung note9 Test">-->
 <!--        <parameter name="device" value="192.168.0.101:5555"></parameter>-->
 <!--        <parameter name="platformVersion" value="9"></parameter>-->

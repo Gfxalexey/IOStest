@@ -9,7 +9,6 @@ import org.testng.annotations.Test;
 @Listeners({TestAllureListener.class})
 public class ForeignCurrencyConversionsPageTest extends BasePage {
     @Test(priority = 1,description = "המרת מטח משקל לדולר")
-
     public void Convers_ILS_To_USD() throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);
         AllActionPage all=new AllActionPage(driver);
@@ -48,7 +47,7 @@ public class ForeignCurrencyConversionsPageTest extends BasePage {
         foreign.board_continueButton.click();
 
         Utils.wait_and_click_Element(driver,foreign.OKButton,2);
-        Utils.waitForElement(driver,foreign.continueButton,10);
+//        Utils.waitForElement(driver,foreign.continueButton,10);
         foreign.Accept_continueButton.click();
         foreign.ScreenCaptureButton.click();
 

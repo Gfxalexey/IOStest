@@ -52,8 +52,8 @@ public class LoginPage {
     @iOSXCUITFindBy(id = "com.ideomobile.discount:id/BotWalkMeClose")
     public MobileElement Close_didiTutorial;
 
-
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeApplication[@name=\"בנק דיסקונט\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[3]/XCUIElementTypeOther/XCUIElementTypeOther[2]\n")
+//    @iOSXCUITFindBy(iOSNsPredicate = "type =='XCUIElementTypeButton' AND name BEGINSWITH 'מבט זריז'")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeApplication[@name=\"בנק דיסקונט\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther[1]\n")
     public  MobileElement arrowsnapshot;
     @iOSXCUITFindBy(id = "com.ideomobile.discount:id/LoginClosedSnapshotTitleTextView")
     public  MobileElement snapshot;
@@ -65,10 +65,15 @@ public class LoginPage {
     public  MobileElement quickcheckDeposit;
     @iOSXCUITFindBy(id = "com.ideomobile.discount:id/loginScreen_quickActions_loanRequestLayout")
     public  MobileElement  quickloan;
-    @iOSXCUITFindBy(id = "com.ideomobile.discount:id/snapshotLayout_quickLook_ButtonLayout")
+
+
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeApplication[@name=\"בנק דיסקונט\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther[1]\n")
+//    @iOSXCUITFindBy(iOSNsPredicate = "type =='XCUIElementTypeButton' AND name BEGINSWITH 'מבט זריז'")
     public  MobileElement  login_snapshot_button;
+
     @iOSXCUITFindBy(id = "com.ideomobile.discount:id/snapshotOshAmountText")
     public  MobileElement  snapshotOshAmount;
+
     @iOSXCUITFindBy(id = "com.ideomobile.discount:id/HelloUser")
     public  MobileElement  HelloUser;
 

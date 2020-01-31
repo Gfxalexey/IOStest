@@ -3,6 +3,7 @@ package Pages;
 import Scrolling.MobileActions;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.remote.AutomationName;
 import io.appium.java_client.remote.IOSMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
@@ -17,10 +18,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
@@ -32,20 +30,15 @@ public class BasePage {
     public AppiumDriver driver;
 
 
-
     public static ThreadLocal<AppiumDriver> tdriver =  new ThreadLocal<AppiumDriver>();
 
-    @Parameters({"device", "appiumServer","systemPort","platformVersion"})
+    @Parameters({"device", "appiumServer","systemPort","platformVersion","buildapp"})
     @BeforeMethod(alwaysRun = true)
 
-    public AppiumDriver initialize_driver(String device, String appiumServer, String systemPort,String platformVersion)  {
+    public AppiumDriver initialize_driver(String device, String appiumServer, String systemPort,String platformVersion,String buildapp)  {
         try {
 
             DesiredCapabilities cap = new DesiredCapabilities();
-
-//            cap.setCapability("realDeviceLogger", "/Users/macoscatalina/Desktop/projects/appium_project_ios/logs");
-//            cap.setCapability("showIOSLog", "true");
-
             cap.setCapability(IOSMobileCapabilityType.AUTO_ACCEPT_ALERTS,"true");
             cap.setCapability(MobileCapabilityType.NO_RESET, "true");
             cap.setCapability(MobileCapabilityType.FULL_RESET, "false");
@@ -56,13 +49,14 @@ public class BasePage {
             cap.setCapability(MobileCapabilityType.PLATFORM_VERSION, platformVersion);
             cap.setCapability(MobileCapabilityType.DEVICE_NAME, device);
             cap.setCapability(MobileCapabilityType.UDID, device);
-            cap.setCapability("xcodeOrgId", "com.discountalexxx.WebDriverAgentRunner");
+            cap.setCapability("xcodeOrgId", "com.discountios.WebDriverAgentRunner");
             cap.setCapability("xcodeSigningId", "iPhone Developer");
-            cap.setCapability(IOSMobileCapabilityType.BUNDLE_ID, "ngsoft.il.co.discountbank.discountbank");
+            cap.setCapability(IOSMobileCapabilityType.BUNDLE_ID, buildapp);
             cap.setCapability(IOSMobileCapabilityType.USE_NEW_WDA, "true");
             cap.setCapability(IOSMobileCapabilityType.WDA_LOCAL_PORT, systemPort);
             URL url = new URL(appiumServer);
-            driver=new AppiumDriver<MobileElement>(url,cap);
+//            driver=new AppiumDriver<MobileElement>(url,cap);
+            driver =new IOSDriver<MobileElement>(url,cap);
             driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
             Assert.assertNotNull(driver);
 
@@ -82,19 +76,26 @@ public class BasePage {
         return tdriver.get();
     }
 
-    public Properties initialize_Properties() {
-        prop = new Properties();
-        try {
-            FileInputStream ip = new FileInputStream("D:/project/Import/discountpageopjectseleniumtest/src/main/java/config.properties");
-            prop.load(ip);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public void check_lock_devices(){
+        if (((IOSDriver) driver).isDeviceLocked())
+            ((IOSDriver) driver).unlockDevice();
 
-        return prop;
     }
+
+
+//    public Properties initialize_Properties() {
+//        prop = new Properties();
+//        try {
+//            FileInputStream ip = new FileInputStream("D:/project/Import/discountpageopjectseleniumtest/src/main/java/config.properties");
+//            prop.load(ip);
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//
+//        return prop;
+//    }
 
     public String getScreenshot() {
         File src = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);
@@ -116,4 +117,5 @@ public class BasePage {
             e.printStackTrace();
         }
     }
+
 }

@@ -1,5 +1,6 @@
 import Pages.*;
 import Pages.Utils;
+import io.appium.java_client.ios.IOSDriver;
 import org.testng.annotations.*;
 import Listeners.TestAllureListener;
 import Utils.PropertyManager;
@@ -13,7 +14,9 @@ public class CashWithdrawalPageTest extends BasePage {
         DashbordPage dashbordPage = new DashbordPage(driver);
         CashWithdrawalPage cashWithdrawalPage = new CashWithdrawalPage(driver);
         loginPage.EnterButton.click();
-        loginPage.loginsuccesOnlyPass( PropertyManager.getInstance().getCashWithdrawalPageTestPass());
+        loginPage.click_changeUser();
+//        loginPage.loginsuccesOnlyPass( PropertyManager.getInstance().getCashWithdrawalPageTestPass());
+        loginPage.loginsucces(PropertyManager.getInstance().getCashWithdrawalPageTestId(),PropertyManager.getInstance().getCashWithdrawalPageTestPass(),PropertyManager.getInstance().getCashWithdrawalPageTestPass());
         Utils.waitForbanner(driver,dashbordPage.Banner,3);
         dashbordPage.click_HamburgerButton();
         dashbordPage.cashWithdrawalButton.click();
