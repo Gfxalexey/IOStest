@@ -40,7 +40,7 @@ public class BasePage {
 
             DesiredCapabilities cap = new DesiredCapabilities();
             cap.setCapability(IOSMobileCapabilityType.AUTO_ACCEPT_ALERTS,"true");
-            cap.setCapability(MobileCapabilityType.NO_RESET, "true");
+            cap.setCapability(MobileCapabilityType.NO_RESET, "false");
             cap.setCapability(MobileCapabilityType.FULL_RESET, "false");
             cap.setCapability(MobileCapabilityType.PLATFORM_NAME, "IOS");
             cap.setCapability(MobileCapabilityType.AUTOMATION_NAME, AutomationName.IOS_XCUI_TEST);
@@ -49,7 +49,7 @@ public class BasePage {
             cap.setCapability(MobileCapabilityType.PLATFORM_VERSION, platformVersion);
             cap.setCapability(MobileCapabilityType.DEVICE_NAME, device);
             cap.setCapability(MobileCapabilityType.UDID, device);
-            cap.setCapability("xcodeOrgId", "com.discountios.WebDriverAgentRunner");
+            cap.setCapability("xcodeOrgId", "com.discountios1.WebDriverAgentRunner");
             cap.setCapability("xcodeSigningId", "iPhone Developer");
             cap.setCapability(IOSMobileCapabilityType.BUNDLE_ID, buildapp);
             cap.setCapability(IOSMobileCapabilityType.USE_NEW_WDA, "true");
@@ -82,20 +82,6 @@ public class BasePage {
 
     }
 
-
-//    public Properties initialize_Properties() {
-//        prop = new Properties();
-//        try {
-//            FileInputStream ip = new FileInputStream("D:/project/Import/discountpageopjectseleniumtest/src/main/java/config.properties");
-//            prop.load(ip);
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//
-//        return prop;
-//    }
 
     public String getScreenshot() {
         File src = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);

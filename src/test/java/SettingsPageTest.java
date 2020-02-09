@@ -30,8 +30,7 @@ public class SettingsPageTest extends BasePage {
         DashbordPage dashbordPage = new DashbordPage(driver);
         SettingsPage set=new SettingsPage(driver);
         loginPage.EnterButton.click();
-        loginPage.loginsuccesOnlyPass("yasmin2020");
-    //        loginPage.loginsuccesOnlyPass(PropertyManager.getInstance().getSettingsPageTestPass());
+        loginPage.loginsuccesOnlyPass(PropertyManager.getInstance().getSettingsPageTestPass());
         Utils.waitForbanner(driver, dashbordPage.Banner, 3);
         dashbordPage.click_HamburgerButton();
         dashbordPage.settingsButton.click();

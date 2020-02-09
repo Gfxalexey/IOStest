@@ -11,7 +11,8 @@ public class PropertyManager {
 
     private static PropertyManager instance;
     private static final Object lock = new Object();
-    private static String propertyFilePath = "/Users/macoscatalina/Desktop/projects/appium_project_ios/src/main/java/config.properties";
+    private static String propertyFilePath = "src/main/resources/config.properties";
+//    private static String propertyFilePath = "/Users/macoscatalina/Desktop/projects/appium_project_ios/src/main/java/config.properties";
 
     public String getChangeAccountTestId() {
         return ChangeAccountTestId;

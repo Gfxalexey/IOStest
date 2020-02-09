@@ -103,6 +103,7 @@ public class DashbordPage {
     public MobileElement openDepositButton;
 
     @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"יתרת עו\"ש\")")
+    @iOSXCUITFindBy(iOSClassChain = "**/XCUIElementTypeWindow[1]/**/XCUIElementTypeButton[9]")
     public MobileElement balanceOfAccount;
 
     @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"העברה בין חשבונות\")")

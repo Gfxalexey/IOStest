@@ -7,8 +7,8 @@
             <parameter name="platformVersion" value="13.3"></parameter>
             <parameter name="appiumServer" value="http://127.0.0.1:4723/wd/hub"></parameter>
             <parameter name="systemPort" value="8289"></parameter>
-<!--            <parameter name="buildapp" value="ngsoft.il.co.discountbank.discountbank"></parameter>-->
-            <parameter name="buildapp" value="il.co.discountbank.discountbank"></parameter>
+            <parameter name="buildapp" value="ngsoft.il.co.discountbank.discountbank"></parameter>
+<!--            <parameter name="buildapp" value="il.co.discountbank.discountbank"></parameter>-->
 
 <!--            <classes>-->
 <!--                <class name=name"VIPFlyPageTest"/>-->
@@ -26,8 +26,10 @@
 <!--                <class name="MyProfilePageTest"/>-->
 <!--                <class name="ForeignCurrencyConversionsPageTest"/>-->
 <!--                <class name="TradePageTest"/>-->
+<!--                <class name="SettingsPageTest"/>-->
+
             <classes>
-                <class name="SettingsPageTest"/>
+                <class name="SnapshotPageTest"/>
 <!--                <class name="CashWithdrawalPageTest">-->
 <!--                    <methods>-->
 <!--                        <include name="CashWithdrawal" />-->
