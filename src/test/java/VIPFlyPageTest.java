@@ -1,6 +1,6 @@
 import Pages.*;
 import Utils.PropertyManager;
-import org.testng.Assert;
+import Utils.Utils;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import Listeners.TestAllureListener;

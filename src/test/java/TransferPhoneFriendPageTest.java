@@ -1,18 +1,7 @@
 import Pages.*;
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileBy;
-import io.appium.java_client.MobileElement;
-import io.appium.java_client.android.AndroidElement;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.touch.TouchActions;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import Utils.Utils;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import java.net.MalformedURLException;
-import java.util.List;
-import java.util.Properties;
 import Listeners.TestAllureListener;
 @Listeners({TestAllureListener.class})
 

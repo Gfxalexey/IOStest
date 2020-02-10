@@ -1,5 +1,6 @@
-package Pages;
+package Utils;
 
+import Pages.Direction;
 import io.appium.java_client.*;
 import io.appium.java_client.android.AndroidTouchAction;
 import io.appium.java_client.ios.IOSDriver;
@@ -42,6 +43,13 @@ public class Utils {
         js.executeScript("mobile: scroll", scrollObject);
 
     }
+    public static void scrollIos(String move,AppiumDriver<MobileElement> driver){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        HashMap<String, String> scrollObject = new HashMap<String, String>();
+        scrollObject.put("direction", move);
+        js.executeScript("mobile: scroll", scrollObject);
+    }
+
 
 
     public static void scrollToText(String text, AppiumDriver<MobileElement> driver) throws InterruptedException {

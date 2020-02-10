@@ -1,6 +1,5 @@
 import Pages.*;
-import Pages.Utils;
-import io.appium.java_client.ios.IOSDriver;
+import Utils.Utils;
 import org.testng.annotations.*;
 import Listeners.TestAllureListener;
 import Utils.PropertyManager;

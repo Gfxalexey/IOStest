@@ -1,20 +1,10 @@
-import java.io.File;
 import java.io.IOException;
-import java.net.MalformedURLException;
-import java.util.Properties;
-import java.util.concurrent.TimeUnit;
+
 import Pages.*;
 import Pages.BasePage;
 import Pages.DashbordPage;
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.remote.MobileCapabilityType;
-import org.apache.maven.shared.utils.io.FileUtils;
+import Utils.Utils;
 import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import io.appium.java_client.MobileElement;
-import io.appium.java_client.android.AndroidDriver;
 import org.testng.annotations.*;
 import Listeners.TestAllureListener;
 import Utils.PropertyManager;

@@ -1,20 +1,11 @@
 //TradePageTest
 
 import Pages.*;
-import com.google.common.collect.ImmutableMap;
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.nativekey.AndroidKey;
-import io.appium.java_client.android.nativekey.KeyEvent;
+import Utils.Utils;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-import java.net.MalformedURLException;
-import java.util.Properties;
 import Listeners.TestAllureListener;
 import  Utils.PropertyManager;
 @Listeners({TestAllureListener.class})

@@ -11,7 +11,7 @@
 <!--            <parameter name="buildapp" value="il.co.discountbank.discountbank"></parameter>-->
 
 <!--            <classes>-->
-<!--                <class name=name"VIPFlyPageTest"/>-->
+<!--                <class name="VIPFlyPageTest"/>-->
 <!--                <class name="CashWithdrawalPageTest"/>-->
 <!--                <class name="CancelCyclicTransferPageTest"/>-->
 <!--                <class name="GetLoanPageTest"/>-->
@@ -27,14 +27,17 @@
 <!--                <class name="ForeignCurrencyConversionsPageTest"/>-->
 <!--                <class name="TradePageTest"/>-->
 <!--                <class name="SettingsPageTest"/>-->
+<!--                <class name="SnapshotPageTest"/>-->
+
 
             <classes>
-                <class name="SnapshotPageTest"/>
-<!--                <class name="CashWithdrawalPageTest">-->
-<!--                    <methods>-->
-<!--                        <include name="CashWithdrawal" />-->
-<!--                    </methods>-->
-<!--                </class>-->
+                <class name="LogOutTest"/>
+
+<!--&lt;!&ndash;                <class name="CashWithdrawalPageTest">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <methods>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <include name="CashWithdrawal" />&ndash;&gt;-->
+<!--&lt;!&ndash;                    </methods>&ndash;&gt;-->
+<!--&lt;!&ndash;                </class>&ndash;&gt;-->
             </classes>
         </test>
 

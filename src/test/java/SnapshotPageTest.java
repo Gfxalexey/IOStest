@@ -1,4 +1,5 @@
 import Pages.*;
+import Utils.Utils;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import Utils.PropertyManager;

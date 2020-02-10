@@ -1,21 +1,8 @@
 import Pages.*;
 import Listeners.TestAllureListener;
 import Utils.PropertyManager;
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileDriver;
-import io.appium.java_client.MobileElement;
-import io.appium.java_client.TouchAction;
-import io.appium.java_client.android.AndroidTouchAction;
-import io.appium.java_client.ios.IOSTouchAction;
-import io.appium.java_client.remote.MobileCapabilityType;
-import io.appium.java_client.touch.offset.ElementOption;
-import io.appium.java_client.touch.offset.PointOption;
-import org.openqa.selenium.interactions.touch.TouchActions;
-import org.openqa.selenium.remote.DesiredCapabilities;
+import Utils.Utils;
 import org.testng.annotations.*;
-import java.net.MalformedURLException;
-import java.time.Duration;
-import java.util.Properties;
 
 @Listeners({TestAllureListener.class})
 

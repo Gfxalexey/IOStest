@@ -1,15 +1,9 @@
 import Pages.*;
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
-import io.appium.java_client.ios.IOSDriver;
-import io.appium.java_client.remote.HideKeyboardStrategy;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import Utils.Utils;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import Listeners.TestAllureListener;
 import Utils.PropertyManager;
-import java.util.concurrent.TimeUnit;
 
 @Listeners({TestAllureListener.class})
 public class TransfersPageTest extends BasePage {
@@ -29,8 +23,8 @@ public class TransfersPageTest extends BasePage {
         dashbordPage.clicktransferButton();
         transfersPage.type_Name("shalom");
         transfersPage.BoardNextButton.click();
-        transfersPage.accountnum.sendKeys("532142");
-        transfersPage.typeNumAccount("31","109");
+        transfersPage.accountnum.sendKeys("379099");
+        transfersPage.typeNumAccount("12","727");
         transfersPage.ContinueButton2.click();
         transfersPage.type_amount("20");
         transfersPage.Keyboard_next.click();
@@ -53,8 +47,8 @@ public class TransfersPageTest extends BasePage {
         dashbordPage.clicktransferButton();
         transfersPage.type_Name("shalom");
         transfersPage.BoardNextButton.click();
-        transfersPage.accountnum.sendKeys("532142");
-        transfersPage.typeNumAccount("31","109");
+        transfersPage.accountnum.sendKeys("379099");
+        transfersPage.typeNumAccount("12","727");
         transfersPage.ContinueButton2.click();
         transfersPage.type_amount("6001");
         transfersPage.Keyboard_next.click();

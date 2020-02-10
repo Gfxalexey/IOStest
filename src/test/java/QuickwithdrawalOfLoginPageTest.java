@@ -1,25 +1,11 @@
 import Pages.*;
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileBy;
+import Utils.Utils;
 import Pages.BasePage;
 import Pages.DashbordPage;
 import Pages.LoginPage;
-import Pages.OpenDepositPage;
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileBy;
-import io.appium.java_client.MobileElement;
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.remote.AutomationName;
-import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.*;
 
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.List;
-import java.util.Properties;
 import Listeners.TestAllureListener;
 
 @Listeners({TestAllureListener.class})

@@ -1,23 +1,11 @@
 import Pages.*;
-import io.appium.java_client.*;
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.touch.WaitOptions;
-import io.appium.java_client.touch.offset.PointOption;
+import Utils.Utils;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
 import org.testng.annotations.*;
 
-import java.net.MalformedURLException;
-import java.time.Duration;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Properties;
 import Listeners.TestAllureListener;
 import Utils.PropertyManager;
-import Utils.PropertyManager;
 
-import static io.appium.java_client.touch.WaitOptions.waitOptions;
 import static io.appium.java_client.touch.offset.PointOption.point;
 import static java.time.Duration.ofSeconds;
 

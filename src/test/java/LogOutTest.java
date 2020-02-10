@@ -1,27 +1,11 @@
 import Pages.*;
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileBy;
+import Utils.Utils;
 import Pages.BasePage;
         import Pages.DashbordPage;
         import Pages.LoginPage;
-        import Pages.OpenDepositPage;
-        import io.appium.java_client.AppiumDriver;
-        import io.appium.java_client.MobileBy;
-        import io.appium.java_client.MobileElement;
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.ios.IOSDriver;
-import io.appium.java_client.remote.AutomationName;
-        import io.appium.java_client.remote.MobileCapabilityType;
-        import org.openqa.selenium.By;
-        import org.openqa.selenium.WebElement;
-        import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.*;
 
-import java.net.MalformedURLException;
-        import java.net.URL;
-        import java.util.List;
-        import java.util.Properties;
-        import Listeners.TestAllureListener;
+import Listeners.TestAllureListener;
         import Utils.PropertyManager;
 @Listeners({TestAllureListener.class})
 
@@ -32,15 +16,12 @@ public class LogOutTest extends BasePage  {
     public void Loguot_Test() throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);
         DashbordPage dashbordPage = new DashbordPage(driver);
-        loginPage.EnterButton.click();
-        loginPage.loginsuccesOnlyPass(PropertyManager.getInstance().getCancelCyclicTransferPageTestPass());
-        Thread.sleep(3000);
-        System.out.println(dashbordPage.balanceOfAccount.getText());
-        dashbordPage.balanceOfAccount.click();
+        Utils.scrollIos("right",driver);
+        System.out.println(driver.getPageSource());
+
 //        List<MobileElement> els2 = (List<MobileElement>) ((IOSDriver) driver).findElementsByIosClassChain("**/XCUIElementTypeWindow[1]/**/XCUIElementTypeButton[9]");
 //        System.out.println(els2.get(0).getText());
 //        els2.get(0).click();
-        Thread.sleep(3000);
 
 //        System.out.println(dashbordPage.balanceOfAccount.getText());
 //        dashbordPage.click_HamburgerButton();

@@ -1,15 +1,10 @@
 import Pages.*;
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
+import Utils.Utils;
 import org.openqa.selenium.By;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import Listeners.TestAllureListener;
 
-import java.net.MalformedURLException;
-import java.util.Properties;
 @Listeners({TestAllureListener.class})
 
 public class SearchBankPageTest extends BasePage{

@@ -1,17 +1,8 @@
 import Pages.*;
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileBy;
-import io.appium.java_client.MobileElement;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import Utils.Utils;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import Listeners.TestAllureListener;
-
-import java.net.MalformedURLException;
-import java.util.List;
-import java.util.Properties;
-import java.util.concurrent.TimeUnit;
 
 import Utils.PropertyManager;
 @Listeners({TestAllureListener.class})

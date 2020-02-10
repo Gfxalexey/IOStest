@@ -1,8 +1,6 @@
 import Pages.BasePage;
 import Pages.*;
-import Pages.Utils;
-import io.appium.java_client.MobileElement;
-import org.openqa.selenium.By;
+import Utils.Utils;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import Listeners.TestAllureListener;

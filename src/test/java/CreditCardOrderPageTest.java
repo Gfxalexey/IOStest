@@ -1,7 +1,7 @@
 
 import Pages.*;
 import Utils.PropertyManager;
-import org.openqa.selenium.By;
+import Utils.Utils;
 import org.testng.Assert;
 import org.testng.annotations.*;
  import Listeners.TestAllureListener;
