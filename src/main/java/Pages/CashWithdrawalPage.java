@@ -51,6 +51,18 @@ public class CashWithdrawalPage {
     @AndroidFindBy(id = "com.ideomobile.discount:id/withdraw_without_card_bank_confirmation_phone")
     public MobileElement PhoneText;
 
+    @iOSXCUITFindBy(iOSNsPredicate = "type =='XCUIElementTypeStaticText' AND name BEGINSWITH '450'")
+    public MobileElement element450;
+
+    @iOSXCUITFindBy(iOSClassChain = "**/XCUIElementTypeCell[3]")
+    public MobileElement amount_carusel3;
+    @iOSXCUITFindBy(iOSClassChain = "**/XCUIElementTypeCell[1]")
+    public MobileElement amount_carusel1;
+
+    @iOSXCUITFindBy(iOSClassChain = "**/XCUIElementTypeCell[2]")
+    public MobileElement amount_carusel2;
+
+
     @Step("לחיצה על אישור")
     public CashWithdrawalPage click_ApprovalButton() {
         ApprovalButton.click();

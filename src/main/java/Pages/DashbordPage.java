@@ -108,11 +108,14 @@ public class DashbordPage {
 
     @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"העברה בין חשבונות\")")
 //    @iOSXCUITFindBy(accessibility = " העברה בין חשבונות")
-    @iOSXCUITFindBy(iOSNsPredicate = "type == 'XCUIElementTypeButton' AND name  BEGINSWITH 'העברה בין חשבונות'")
+//    @iOSXCUITFindBy(iOSNsPredicate = "type == 'XCUIElementTypeButton' AND name  BEGINSWITH 'העברה בין חשבונות'")
+    @iOSXCUITFindBy(iOSClassChain = "**/XCUIElementTypeCell[4]/**/XCUIElementTypeButton[7]")
+
     public MobileElement transferButton;
 
     @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"בקשת הלוואה\")")
-    @iOSXCUITFindBy(iOSNsPredicate = "type =='XCUIElementTypeButton' AND name BEGINSWITH 'בקשת הלוואה'")
+//    @iOSXCUITFindBy(iOSNsPredicate = "type =='XCUIElementTypeButton' AND name BEGINSWITH 'בקשת הלוואה'")
+    @iOSXCUITFindBy(iOSClassChain = "**/XCUIElementTypeCell[4]/**/XCUIElementTypeButton[9]")
     public MobileElement LoanButton;
 
     @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"העברה לאיש קשר\")")

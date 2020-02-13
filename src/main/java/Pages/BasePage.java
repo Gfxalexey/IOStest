@@ -23,7 +23,7 @@ import java.net.URL;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-public class BasePage {
+public abstract class BasePage {
     public WebDriverWait wait;
     public MobileActions mobileActions;
     public Properties prop;

@@ -15,7 +15,7 @@ import static java.time.Duration.ofMillis;
 import static java.time.Duration.ofSeconds;
 
 //**********************************************************************************************************
-//Author: Onur Baskirt
+//Author: alexey mihaylov
 //Description: This is the main class of MobileActions such as swipe, tap, multitouch, etc.
 //**********************************************************************************************************
 public class MobileActions {
