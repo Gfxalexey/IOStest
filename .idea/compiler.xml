@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="appium_project_ios" />
         <module name="com.discountbankappium" />
+        <module name="IOStest" />
         <module name="appium_project" />
       </profile>
     </annotationProcessing>

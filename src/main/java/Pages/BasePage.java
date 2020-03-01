@@ -26,7 +26,6 @@ import java.util.concurrent.TimeUnit;
 public abstract class BasePage {
     public WebDriverWait wait;
     public MobileActions mobileActions;
-    public Properties prop;
     public AppiumDriver driver;
 
 
